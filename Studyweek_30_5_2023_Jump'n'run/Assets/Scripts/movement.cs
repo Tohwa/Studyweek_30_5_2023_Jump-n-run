@@ -12,6 +12,7 @@ public class movement : MonoBehaviour
     [SerializeField] private float coyoteTime = 0.2f;
     [SerializeField] private float bufferTime = 0.2f;
     [SerializeField] private bool canDoubleJump;
+    [SerializeField] private bool canMoveVertical;
     [SerializeField] private int JumpCount = 2;
 
     private Rigidbody2D rb;
@@ -29,6 +30,7 @@ public class movement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         isJumping = false;
         canDoubleJump = false;
+        canMoveVertical = false;
     }
 
     private void Update()
@@ -86,7 +88,17 @@ public class movement : MonoBehaviour
     private void Move()
     {
         float moveX = moveInput.x * moveSpeed * Time.fixedDeltaTime;
-        rb.velocity = new Vector2(moveX, rb.velocity.y);
+
+        if (!canMoveVertical)
+        {
+            rb.velocity = new Vector2(moveX, rb.velocity.y);
+        }
+        else
+        {
+            float moveY = moveInput.y * moveSpeed * Time.fixedDeltaTime;
+            rb.velocity = new Vector2(moveX, moveY);
+        }
+        
     }
 
     private void Jump()
@@ -113,6 +125,24 @@ public class movement : MonoBehaviour
         {
             isGrounded = false;
             CoyoteTimeCounter = 0f;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ladder"))
+        {
+            canMoveVertical = true;
+            rb.gravityScale = 0;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ladder"))
+        {
+            canMoveVertical = false;
+            rb.gravityScale = 1;
         }
     }
 }
