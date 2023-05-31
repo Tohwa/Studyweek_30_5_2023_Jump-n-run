@@ -4,15 +4,28 @@ using UnityEngine;
 
 public class Interaction : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    #region Fields
+    [Header("Booleans")]
+    public bool shroomEaten;
+    public bool keyTaken;
+    #endregion
+
+    private void Start()
     {
-        
+        shroomEaten = false;
+        keyTaken = false;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    private void OnTriggerEnter2D(Collider2D collision)
+    {       
+        if (collision.gameObject.CompareTag("Key"))
+        {
+            keyTaken = true;
+        }
+
+        if (collision.gameObject.CompareTag("Shroom"))
+        {
+            shroomEaten = true;
+        }
     }
 }

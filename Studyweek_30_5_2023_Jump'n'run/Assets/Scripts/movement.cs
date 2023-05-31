@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class movement : MonoBehaviour
 {
@@ -10,14 +11,15 @@ public class movement : MonoBehaviour
     [SerializeField] private float jumpForce = 5f;
     [SerializeField] private float coyoteTime = 0.2f;
     [SerializeField] private float bufferTime = 0.2f;
-    [SerializeField] private bool canDoubleJump = false;
-    [SerializeField] private float JumpCount = 2f;
+    [SerializeField] private bool canDoubleJump;
+    [SerializeField] private int JumpCount = 2;
 
     private Rigidbody2D rb;
-    private bool isJumping = false;
+    private bool checkShroomEaten = false;
+    private bool isJumping;
     private bool isGrounded = false;
     private float CoyoteTimeCounter;
-    private float bufferTimer;
+    private float bufferTimerCounter;
 
     private Vector2 moveInput;
     #endregion
@@ -25,24 +27,33 @@ public class movement : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        isJumping = false;
+        canDoubleJump = false;
     }
 
     private void Update()
     {
-        if (isGrounded)
+        checkShroomEaten = this.gameObject.GetComponent<Interaction>().shroomEaten;
+        if (isGrounded && !checkShroomEaten)
+        {
+            canDoubleJump = false;
+            JumpCount = 1;
+        }
+        else if(isGrounded && checkShroomEaten)
         {
             canDoubleJump = true;
-            JumpCount = 2f;
+            JumpCount = 2;
         }
 
-        if (isJumping && bufferTimer > 0f)
+
+        if (isJumping && bufferTimerCounter > 0f)
         {
             Jump();
-            bufferTimer = 0f;
+            bufferTimerCounter = 0f;
         }
         else
         {
-            bufferTimer -= Time.deltaTime;
+            bufferTimerCounter -= Time.deltaTime;
         }
     }
 
@@ -68,7 +79,7 @@ public class movement : MonoBehaviour
         }
         else if (context.performed && !isGrounded)
         {
-            bufferTimer = bufferTime;
+            bufferTimerCounter = bufferTime;
         }
     }
 
