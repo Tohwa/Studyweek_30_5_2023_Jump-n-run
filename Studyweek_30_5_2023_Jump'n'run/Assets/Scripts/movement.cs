@@ -6,25 +6,102 @@ using UnityEngine.InputSystem;
 public class movement : MonoBehaviour
 {
     #region Fields
-    [SerializeField] private Rigidbody2D _rb;
+    [SerializeField] private float moveSpeed = 5f;
+    [SerializeField] private float jumpForce = 5f;
+    [SerializeField] private float coyoteTime = 0.2f;
+    [SerializeField] private float bufferTime = 0.2f;
+    [SerializeField] private bool canDoubleJump = false;
+    [SerializeField] private float JumpCount = 2f;
 
-    [SerializeField] private float movespeed;
+    private Rigidbody2D rb;
+    private bool isJumping = false;
+    private bool isGrounded = false;
+    private float CoyoteTimeCounter;
+    private float bufferTimer;
 
-    private Vector2 _moveValue;
+    private Vector2 moveInput;
     #endregion
 
-    void Start()
+    private void Start()
     {
-        _rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
-    void FixedUpdate()
+    private void Update()
     {
-        _rb.velocity = new Vector2(_moveValue.x * movespeed * Time.deltaTime, _rb.velocity.y);
+        if (isGrounded)
+        {
+            canDoubleJump = true;
+            JumpCount = 2f;
+        }
+
+        if (isJumping && bufferTimer > 0f)
+        {
+            Jump();
+            bufferTimer = 0f;
+        }
+        else
+        {
+            bufferTimer -= Time.deltaTime;
+        }
     }
 
-    public void UpdateMove(InputAction.CallbackContext ctx)
+    private void FixedUpdate()
     {
-        _moveValue = ctx.ReadValue<Vector2>();
+        Move();
+    }
+
+    public void OnMove(InputAction.CallbackContext context)
+    {
+        moveInput = context.ReadValue<Vector2>();
+    }
+
+    public void OnJump(InputAction.CallbackContext context)
+    {
+        if (context.started && (isGrounded || (canDoubleJump && !isJumping)) && JumpCount > 0f)
+        {
+            Jump();
+        }
+        else if (context.canceled && isJumping)
+        {
+            isJumping = false;
+        }
+        else if (context.performed && !isGrounded)
+        {
+            bufferTimer = bufferTime;
+        }
+    }
+
+    private void Move()
+    {
+        float moveX = moveInput.x * moveSpeed * Time.fixedDeltaTime;
+        rb.velocity = new Vector2(moveX, rb.velocity.y);
+    }
+
+    private void Jump()
+    {
+        rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+        CoyoteTimeCounter = coyoteTime;
+        isJumping = true;
+        JumpCount--;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = true;
+            isJumping = false;
+            CoyoteTimeCounter = coyoteTime;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = false;
+            CoyoteTimeCounter = 0f;
+        }
     }
 }

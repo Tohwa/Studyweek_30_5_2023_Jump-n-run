@@ -279,6 +279,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1537527257 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9047129095496793062, guid: 2abdb3638a150154198fb5136caca29e, type: 3}
+  m_PrefabInstance: {fileID: 9047129095431704502}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebf20a7ce14b51c4d9cc1d4912a88e7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1820089464
 GameObject:
   m_ObjectHideFlags: 0
@@ -745,8 +756,20 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 9047129095496793059, guid: 2abdb3638a150154198fb5136caca29e, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9047129095496793059, guid: 2abdb3638a150154198fb5136caca29e, type: 3}
       propertyPath: bufferTime
       value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9047129095496793062, guid: 2abdb3638a150154198fb5136caca29e, type: 3}
+      propertyPath: jumpForce
+      value: 7.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9047129095496793062, guid: 2abdb3638a150154198fb5136caca29e, type: 3}
+      propertyPath: moveSpeed
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 9047129095496793062, guid: 2abdb3638a150154198fb5136caca29e, type: 3}
       propertyPath: movespeed
@@ -756,5 +779,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: player
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 9047129095496793081, guid: 2abdb3638a150154198fb5136caca29e, type: 3}
+      propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1537527257}
+    - target: {fileID: 9047129095496793081, guid: 2abdb3638a150154198fb5136caca29e, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnMove
+      objectReference: {fileID: 0}
+    - target: {fileID: 9047129095496793081, guid: 2abdb3638a150154198fb5136caca29e, type: 3}
+      propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnJump
+      objectReference: {fileID: 0}
+    - target: {fileID: 9047129095496793081, guid: 2abdb3638a150154198fb5136caca29e, type: 3}
+      propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: movement, Assembly-CSharp
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 9047129095496793059, guid: 2abdb3638a150154198fb5136caca29e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2abdb3638a150154198fb5136caca29e, type: 3}
