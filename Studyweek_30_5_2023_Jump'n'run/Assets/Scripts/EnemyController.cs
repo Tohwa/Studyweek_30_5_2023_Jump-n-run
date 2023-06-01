@@ -6,7 +6,7 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     #region
-    [SerializeField] Rigidbody2D _rb;
+    [SerializeField] private SpriteRenderer spriteRenderer;
 
     [SerializeField] private float moveSpeed = 3f;
     public Transform leftBoundary;
@@ -16,7 +16,6 @@ public class EnemyController : MonoBehaviour
 
     private void Start()
     {
-        _rb = GetComponent<Rigidbody2D>();
         movingRight = false;
     }
 
@@ -24,6 +23,7 @@ public class EnemyController : MonoBehaviour
     {
         if (movingRight)
         {
+            spriteRenderer.flipX = false;
             transform.Translate(Vector2.right * moveSpeed * Time.deltaTime);
 
             if(transform.position.x >= rightBoundary.position.x)
@@ -33,6 +33,7 @@ public class EnemyController : MonoBehaviour
         }
         else
         {
+            spriteRenderer.flipX = true;
             transform.Translate(Vector2.left * moveSpeed * Time.deltaTime);
 
             if (transform.position.x <= leftBoundary.position.x)

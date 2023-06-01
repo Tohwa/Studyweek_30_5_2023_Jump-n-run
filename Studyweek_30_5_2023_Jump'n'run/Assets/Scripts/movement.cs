@@ -15,6 +15,8 @@ public class movement : MonoBehaviour
     [SerializeField] private bool canMoveVertical;
     [SerializeField] private int JumpCount = 2;
 
+    public Animator animator;
+
     private Rigidbody2D rb;
     private bool checkShroomEaten = false;
     private bool isJumping;
@@ -92,11 +94,13 @@ public class movement : MonoBehaviour
         if (!canMoveVertical)
         {
             rb.velocity = new Vector2(moveX, rb.velocity.y);
+            animator.SetFloat("speed", Mathf.Abs(moveX));
         }
         else
         {
             float moveY = moveInput.y * moveSpeed * Time.fixedDeltaTime;
             rb.velocity = new Vector2(moveX, moveY);
+            animator.SetFloat("speed", Mathf.Abs(moveX));
         }
         
     }

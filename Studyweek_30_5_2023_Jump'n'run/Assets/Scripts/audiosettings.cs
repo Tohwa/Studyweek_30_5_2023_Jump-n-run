@@ -8,8 +8,8 @@ public class audiosettings : MonoBehaviour
     [SerializeField] private Rigidbody2D _rb;
     [SerializeField] private AudioSource _audioSource;
 
-    private float footStepDelay = 0.5f;
-    private float nextFootStepTime = 0.5f;
+    private float footStepDelay = 0.6f;
+    private float nextFootStepTime = 0.6f;
     #endregion
 
     private void Start()
@@ -18,7 +18,7 @@ public class audiosettings : MonoBehaviour
     }
     private void Update()
     {
-        if(_rb.velocity.x != 0)
+        if(_rb.velocity.x != 0 && _rb.velocity.y == 0)
         {
             if(Time.time >= nextFootStepTime)
             {
