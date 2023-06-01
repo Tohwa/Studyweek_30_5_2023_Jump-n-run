@@ -312,7 +312,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 488381587}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 54.027054, y: 8.6, z: 0}
+  m_LocalPosition: {x: 54.027054, y: 8.6, z: 1}
   m_LocalScale: {x: 2, y: 25, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -659,6 +659,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9047129095496793058, guid: 2abdb3638a150154198fb5136caca29e, type: 3}
   m_PrefabInstance: {fileID: 9047129095431704502}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1537527271 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2447675772347489281, guid: 2abdb3638a150154198fb5136caca29e, type: 3}
+  m_PrefabInstance: {fileID: 9047129095431704502}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1036611287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e02f7cedd6307b45aaf58cb5f43a595, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1615351137
 GameObject:
   m_ObjectHideFlags: 0
@@ -761,7 +772,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 7.5
+  orthographic size: 8.958795
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -6728,18 +6739,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9047129095496793059, guid: 2abdb3638a150154198fb5136caca29e, type: 3}
-      propertyPath: jumpForce
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 9047129095496793059, guid: 2abdb3638a150154198fb5136caca29e, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9047129095496793059, guid: 2abdb3638a150154198fb5136caca29e, type: 3}
-      propertyPath: bufferTime
-      value: 0.2
-      objectReference: {fileID: 0}
     - target: {fileID: 9047129095496793062, guid: 2abdb3638a150154198fb5136caca29e, type: 3}
       propertyPath: jumpForce
       value: 8
@@ -6757,20 +6756,60 @@ PrefabInstance:
       value: player
       objectReference: {fileID: 0}
     - target: {fileID: 9047129095496793081, guid: 2abdb3638a150154198fb5136caca29e, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 9047129095496793081, guid: 2abdb3638a150154198fb5136caca29e, type: 3}
+      propertyPath: m_ActionEvents.Array.data[14].m_ActionId
+      value: aaab8934-8b59-4515-88de-867066578546
+      objectReference: {fileID: 0}
+    - target: {fileID: 9047129095496793081, guid: 2abdb3638a150154198fb5136caca29e, type: 3}
+      propertyPath: m_ActionEvents.Array.data[14].m_ActionName
+      value: Player/Enter Door[/Keyboard/e]
+      objectReference: {fileID: 0}
+    - target: {fileID: 9047129095496793081, guid: 2abdb3638a150154198fb5136caca29e, type: 3}
+      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9047129095496793081, guid: 2abdb3638a150154198fb5136caca29e, type: 3}
+      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9047129095496793081, guid: 2abdb3638a150154198fb5136caca29e, type: 3}
       propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1537527257}
     - target: {fileID: 9047129095496793081, guid: 2abdb3638a150154198fb5136caca29e, type: 3}
+      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1537527271}
+    - target: {fileID: 9047129095496793081, guid: 2abdb3638a150154198fb5136caca29e, type: 3}
       propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnMove
+      objectReference: {fileID: 0}
+    - target: {fileID: 9047129095496793081, guid: 2abdb3638a150154198fb5136caca29e, type: 3}
+      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9047129095496793081, guid: 2abdb3638a150154198fb5136caca29e, type: 3}
       propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnJump
       objectReference: {fileID: 0}
     - target: {fileID: 9047129095496793081, guid: 2abdb3638a150154198fb5136caca29e, type: 3}
+      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: EnterHome
+      objectReference: {fileID: 0}
+    - target: {fileID: 9047129095496793081, guid: 2abdb3638a150154198fb5136caca29e, type: 3}
       propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: movement, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 9047129095496793081, guid: 2abdb3638a150154198fb5136caca29e, type: 3}
+      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Interaction, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 9047129095496793081, guid: 2abdb3638a150154198fb5136caca29e, type: 3}
+      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 9047129095875032886, guid: 2abdb3638a150154198fb5136caca29e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6781,5 +6820,5 @@ PrefabInstance:
       value: 20.960072
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 9047129095496793059, guid: 2abdb3638a150154198fb5136caca29e, type: 3}
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 2abdb3638a150154198fb5136caca29e, type: 3}
