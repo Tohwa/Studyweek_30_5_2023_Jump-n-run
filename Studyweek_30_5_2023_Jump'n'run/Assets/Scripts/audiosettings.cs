@@ -18,7 +18,7 @@ public class audiosettings : MonoBehaviour
     }
     private void Update()
     {
-        if(_rb.velocity.x != 0 && _rb.velocity.y == 0)
+        if (_rb.velocity.x != 0 && (_rb.velocity.y < 0.2 || _rb.velocity.y > -0.2))
         {
             if(Time.time >= nextFootStepTime)
             {
