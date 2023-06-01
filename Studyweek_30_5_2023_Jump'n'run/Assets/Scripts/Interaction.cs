@@ -34,19 +34,28 @@ public class Interaction : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Water"))
         {
-            SceneManager.LoadScene("Game Over");
+            SceneManager.LoadScene("GameOver");
         }
-        else if (collision.gameObject.CompareTag(""))
+
+        if (collision.gameObject.CompareTag("Door"))
         {
-            SceneManager.LoadScene("Game Over");
+            doorReached = true;
         }
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Shroom"))
+        if (collision.gameObject.CompareTag("Door"))
         {
-            doorReached = true;
+            doorReached = false;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            SceneManager.LoadScene("GameOver");
         }
     }
 
