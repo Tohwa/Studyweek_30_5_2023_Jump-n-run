@@ -39,7 +39,7 @@ public class SpikeBehavious : MonoBehaviour
     private void DropSpike()
     {
         _spike.transform.parent = null;
-        _rb.AddForce(Vector2.down * 5, ForceMode2D.Impulse);
+        _rb.gravityScale = 4;
     }
 
     private bool CheckPlayerHitbox()
@@ -53,9 +53,9 @@ public class SpikeBehavious : MonoBehaviour
         return hitInfo.collider;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("BoulderCheck"))
+        if (collision.gameObject.CompareTag("Ground"))
         {
             _spike.SetActive(false);
         }
