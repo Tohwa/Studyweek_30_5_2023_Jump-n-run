@@ -11,6 +11,7 @@ TagManager:
   - Ladder
   - Door
   - Enemy
+  - BoulderCheck
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - Wall
   - Water
   - UI
-  - 
+  - Player
   - 
   - 
   - 

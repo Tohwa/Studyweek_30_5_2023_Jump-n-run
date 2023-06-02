@@ -13,9 +13,9 @@ public class deactivateShroom : MonoBehaviour
 
     private bool checkShroomEaten;
     private bool checkKeyTaken;
-   
 
     #endregion
+
     // Update is called once per frame
     void Update()
     {
@@ -30,7 +30,6 @@ public class deactivateShroom : MonoBehaviour
         if (checkKeyTaken)
         {
             _key.SetActive(false);
-            _Wall.SetActive(false);
         }
     }
 }

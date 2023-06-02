@@ -1,13 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Security.Cryptography;
 using UnityEngine;
 
-public class EnemyController : MonoBehaviour
+public class MosquitoController : MonoBehaviour
 {
     #region
     [SerializeField] private SpriteRenderer spriteRenderer;
-
+    
     [SerializeField] private float moveSpeed = 3f;
 
     public Transform leftBoundary;
@@ -27,7 +26,7 @@ public class EnemyController : MonoBehaviour
             spriteRenderer.flipX = false;
             transform.Translate(Vector2.right * moveSpeed * Time.deltaTime);
 
-            if(transform.position.x >= rightBoundary.position.x)
+            if (transform.position.x >= rightBoundary.position.x)
             {
                 movingRight = false;
             }
@@ -43,6 +42,4 @@ public class EnemyController : MonoBehaviour
             }
         }
     }
-
-
 }
