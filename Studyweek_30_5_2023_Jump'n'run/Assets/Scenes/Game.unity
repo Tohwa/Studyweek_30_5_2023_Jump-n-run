@@ -5625,6 +5625,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rb: {fileID: 1537527274}
   _audioSource: {fileID: 1537527277}
+  _player: {fileID: 1036611287}
+  _input: {fileID: 9047129095431704503}
 --- !u!82 &1537527277
 AudioSource:
   m_ObjectHideFlags: 0
@@ -15246,3 +15248,14 @@ PrefabInstance:
     - {fileID: 0}
     - {fileID: 9047129095496793063, guid: 2abdb3638a150154198fb5136caca29e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2abdb3638a150154198fb5136caca29e, type: 3}
+--- !u!114 &9047129095431704503 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9047129095496793081, guid: 2abdb3638a150154198fb5136caca29e, type: 3}
+  m_PrefabInstance: {fileID: 9047129095431704502}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1036611287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

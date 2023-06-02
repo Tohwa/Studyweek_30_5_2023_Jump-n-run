@@ -24,7 +24,7 @@ public class movement : MonoBehaviour
     private float CoyoteTimeCounter;
     private float bufferTimerCounter;
 
-    private Vector2 moveInput;
+    public Vector2 moveInput;
     #endregion
 
     private void Start()
