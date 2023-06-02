@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 9047129095496793063}
   - component: {fileID: 9047129095496793062}
   - component: {fileID: 9047129095496793081}
-  - component: {fileID: 9047129095496793059}
   - component: {fileID: 2447675772347489281}
   m_Layer: 0
   m_Name: player
@@ -144,6 +143,7 @@ MonoBehaviour:
   coyoteTime: 0.2
   bufferTime: 0.2
   canDoubleJump: 0
+  canMoveVertical: 0
   JumpCount: 2
 --- !u!114 &9047129095496793081
 MonoBehaviour:
@@ -236,7 +236,7 @@ MonoBehaviour:
     m_ActionName: UI/TrackedDeviceOrientation
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9047129095496793059}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Jump, Assembly-CSharp
         m_MethodName: UpdateJump
         m_Mode: 0
@@ -255,26 +255,6 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &9047129095496793059
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9047129095496793080}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2665f1714dfc7642ac9d0f24bc4b923, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _rb: {fileID: 9047129095496793060}
-  jumpForce: 7.5
-  coyoteTime: 0.2
-  coyoteTimeCounter: 0
-  bufferTime: 1.2
-  bufferTimeCounter: 0
-  jumpCount: 1
-  grounded: 0
 --- !u!114 &2447675772347489281
 MonoBehaviour:
   m_ObjectHideFlags: 0
