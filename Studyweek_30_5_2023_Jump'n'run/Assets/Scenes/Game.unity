@@ -3322,6 +3322,10 @@ PrefabInstance:
       value: left_leaves
       objectReference: {fileID: 0}
     - target: {fileID: 1819240229110400737, guid: bc946081376dca941af65ff1afea692b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -15.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 1819240229110400737, guid: bc946081376dca941af65ff1afea692b, type: 3}
       propertyPath: m_LocalPosition.z
       value: 15
       objectReference: {fileID: 0}
