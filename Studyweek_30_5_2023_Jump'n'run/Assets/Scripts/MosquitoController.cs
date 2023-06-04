@@ -69,7 +69,7 @@ public class MosquitoController : MonoBehaviour
             {
                 transform.Translate(Vector2.down * moveDownSpeed * Time.deltaTime);
 
-                if (transform.position.y <= leftBoundary.position.y)
+                if (transform.position.y <= lowerBoundary.position.y)
                 {
                     movingDown = false;
                 }
