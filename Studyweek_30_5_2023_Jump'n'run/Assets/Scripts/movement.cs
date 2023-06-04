@@ -20,7 +20,7 @@ public class movement : MonoBehaviour
     private Rigidbody2D rb;
     private bool checkShroomEaten = false;
     private bool isJumping;
-    private bool isGrounded = false;
+    public bool isGrounded = false;
     private float CoyoteTimeCounter;
     private float bufferTimerCounter;
 
