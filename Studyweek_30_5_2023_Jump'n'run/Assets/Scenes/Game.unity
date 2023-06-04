@@ -6957,6 +6957,7 @@ GameObject:
   - component: {fileID: 931171908}
   - component: {fileID: 931171907}
   - component: {fileID: 931171906}
+  - component: {fileID: 931171909}
   m_Layer: 0
   m_Name: Chest
   m_TagString: Door
@@ -6981,7 +6982,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 20, y: 20}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -7031,7 +7032,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 59b991984ef73ff448a6e505b1c6e124, type: 3}
   m_Color: {r: 0.6792453, g: 0.40663525, b: 0.29156286, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -7050,13 +7051,34 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 931171905}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 126.62, y: -0.56, z: 15}
-  m_LocalScale: {x: 4, y: 3, z: 1}
+  m_LocalPosition: {x: 126.62, y: -0.486, z: 15}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &931171909
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 931171905}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 319404f9cd0c01c488941f2bc235a6c6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &972838339
 GameObject:
   m_ObjectHideFlags: 0
@@ -18713,6 +18735,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1615138421492166562, guid: 56d41446e6b8ba849821a44e0d9dd124, type: 3}
+      propertyPath: _sprite
+      value: 
+      objectReference: {fileID: 931171907}
+    - target: {fileID: 1615138421492166562, guid: 56d41446e6b8ba849821a44e0d9dd124, type: 3}
+      propertyPath: _animator
+      value: 
+      objectReference: {fileID: 931171909}
+    - target: {fileID: 1615138421492166562, guid: 56d41446e6b8ba849821a44e0d9dd124, type: 3}
+      propertyPath: _nextSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a781f5740e02da645a35e3c2db56d008, type: 3}
     - target: {fileID: 5336800781826798069, guid: 56d41446e6b8ba849821a44e0d9dd124, type: 3}
       propertyPath: _key
       value: 

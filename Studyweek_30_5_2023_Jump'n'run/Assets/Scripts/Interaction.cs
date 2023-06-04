@@ -4,9 +4,13 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
+
 public class Interaction : MonoBehaviour
 {
     #region Fields
+    public SpriteRenderer _sprite;
+    public Sprite _nextSprite;
+
     [Header("Booleans")]
     public bool shroomEaten;
     public bool keyTaken;
@@ -40,6 +44,7 @@ public class Interaction : MonoBehaviour
         if (collision.gameObject.CompareTag("Door"))
         {
             doorReached = true;
+            _sprite.sprite = _nextSprite;
         }
     }
 
