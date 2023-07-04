@@ -68,23 +68,29 @@ public class movement : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        moveInput = context.ReadValue<Vector2>();
+        if(!Pausemenu.isPaused)
+        {
+            moveInput = context.ReadValue<Vector2>();
+        }
     }
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        if (context.started && (isGrounded || (canDoubleJump && !isJumping)) && JumpCount > 0f)
+        if (!Pausemenu.isPaused)
         {
-            Jump();
-        }
-        else if (context.canceled && isJumping)
-        {
-            isJumping = false;
-        }
-        else if (context.performed && !isGrounded)
-        {
-            bufferTimerCounter = bufferTime;
-        }
+            if (context.started && (isGrounded || (canDoubleJump && !isJumping)) && JumpCount > 0f)
+            {
+                Jump();
+            }
+            else if (context.canceled && isJumping)
+            {
+                isJumping = false;
+            }
+            else if (context.performed && !isGrounded)
+            {
+                bufferTimerCounter = bufferTime;
+            }
+        }        
     }
 
     private void Move()
