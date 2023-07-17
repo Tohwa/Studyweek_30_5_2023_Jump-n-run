@@ -20,7 +20,7 @@ public class movement : MonoBehaviour
     private Rigidbody2D rb;
     private bool checkShroomEaten = false;
     private bool isJumping;
-    private bool isGrounded = false;
+    public bool isGrounded = false;
     private float CoyoteTimeCounter;
     private float bufferTimerCounter;
 
@@ -37,7 +37,7 @@ public class movement : MonoBehaviour
 
     private void Update()
     {
-        checkShroomEaten = this.gameObject.GetComponent<Interaction>().shroomEaten;
+        checkShroomEaten = gameObject.GetComponent<InteractionManager>().shroomEaten;
         if (isGrounded && !checkShroomEaten)
         {
             canDoubleJump = false;
@@ -68,23 +68,29 @@ public class movement : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        moveInput = context.ReadValue<Vector2>();
+        if(!Pausemenu.isPaused || deactivateShroom.waitForResponse)
+        {
+            moveInput = context.ReadValue<Vector2>();
+        }
     }
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        if (context.started && (isGrounded || (canDoubleJump && !isJumping)) && JumpCount > 0f)
+        if (!Pausemenu.isPaused)
         {
-            Jump();
-        }
-        else if (context.canceled && isJumping)
-        {
-            isJumping = false;
-        }
-        else if (context.performed && !isGrounded)
-        {
-            bufferTimerCounter = bufferTime;
-        }
+            if (context.started && (isGrounded || (canDoubleJump && !isJumping)) && JumpCount > 0f)
+            {
+                Jump();
+            }
+            else if (context.canceled && isJumping)
+            {
+                isJumping = false;
+            }
+            else if (context.performed && !isGrounded)
+            {
+                bufferTimerCounter = bufferTime;
+            }
+        }        
     }
 
     private void Move()

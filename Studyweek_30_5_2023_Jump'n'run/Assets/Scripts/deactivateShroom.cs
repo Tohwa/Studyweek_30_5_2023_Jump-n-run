@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.Playables;
+using UnityEngine.SceneManagement;
 
 public class deactivateShroom : MonoBehaviour
 {
@@ -10,27 +13,58 @@ public class deactivateShroom : MonoBehaviour
     [SerializeField] private GameObject _key;
     [SerializeField] private GameObject _player;
     [SerializeField] private GameObject _Wall;
+    [SerializeField] private GameObject _notification;
 
-    private bool checkShroomEaten;
+    
     private bool checkKeyTaken;
-   
+    public static bool waitForResponse;
+    [SerializeField] private bool clicked;
 
     #endregion
-    // Update is called once per frame
+
+    void Start()
+    {
+        _notification.SetActive(false);
+    }
+
     void Update()
     {
-        checkShroomEaten = _player.gameObject.GetComponent<Interaction>().shroomEaten;
-        checkKeyTaken = _player.gameObject.GetComponent<Interaction>().keyTaken;
+        checkKeyTaken = _player.gameObject.GetComponent<InteractionManager>().keyTaken;       
 
-        if (checkShroomEaten)
+        if(clicked && waitForResponse)
         {
-            _shroom.SetActive(false);
+            NoLongerWaiting();
         }
 
         if (checkKeyTaken)
         {
             _key.SetActive(false);
-            _Wall.SetActive(false);
         }
+    }
+
+    public void OnResponse(InputAction.CallbackContext ctx)
+    {
+        if (ctx.started)
+        {
+            clicked = true;
+        }
+        
+    }
+
+    public void Waiting()
+    {
+        _shroom.SetActive(false);
+        _notification.SetActive(true);
+        Time.timeScale = 0f;
+        waitForResponse = true;
+        
+    }
+
+    private void NoLongerWaiting()
+    {
+        _notification.SetActive(false);
+        Time.timeScale = 1f;
+        waitForResponse = false;
+        clicked = false;
     }
 }

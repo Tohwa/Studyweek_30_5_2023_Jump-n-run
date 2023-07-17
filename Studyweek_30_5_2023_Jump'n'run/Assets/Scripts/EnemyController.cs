@@ -9,6 +9,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private SpriteRenderer spriteRenderer;
 
     [SerializeField] private float moveSpeed = 3f;
+
     public Transform leftBoundary;
     public Transform rightBoundary;
     public bool movingRight;
@@ -43,5 +44,5 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    
+
 }
