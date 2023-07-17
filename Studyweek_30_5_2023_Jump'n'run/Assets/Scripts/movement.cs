@@ -37,7 +37,6 @@ public class movement : MonoBehaviour
 
     private void Update()
     {
-        checkShroomEaten = this.gameObject.GetComponent<Interaction>().shroomEaten;
         if (isGrounded && !checkShroomEaten)
         {
             canDoubleJump = false;
@@ -68,7 +67,7 @@ public class movement : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        if(!Pausemenu.isPaused)
+        if(!Pausemenu.isPaused || deactivateShroom.waitForResponse)
         {
             moveInput = context.ReadValue<Vector2>();
         }

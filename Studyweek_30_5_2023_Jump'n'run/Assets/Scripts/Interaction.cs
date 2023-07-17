@@ -10,6 +10,7 @@ public class Interaction : MonoBehaviour
     #region Fields
     public SpriteRenderer _sprite;
     public Sprite _nextSprite;
+    [SerializeField] private deactivateShroom _deactivation;
 
     [Header("Booleans")]
     public bool shroomEaten;
@@ -33,7 +34,7 @@ public class Interaction : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Shroom"))
         {
-            shroomEaten = true;
+            _deactivation.Waiting();
         }
 
         if (collision.gameObject.CompareTag("Water"))
