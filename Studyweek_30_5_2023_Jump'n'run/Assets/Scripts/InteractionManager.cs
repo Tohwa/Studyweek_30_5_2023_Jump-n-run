@@ -9,7 +9,8 @@ public class InteractionManager : MonoBehaviour
 {
     /*
     #region Fields
-    [SerializeField] private GameObject _player;
+
+    [Header(“GameObjects”)]
     [SerializeField] private GameObject _enemyNPC;
     [SerializeField] private GameObject _mosquitoNPC;
     [SerializeField] private GameObject _water;
@@ -18,7 +19,16 @@ public class InteractionManager : MonoBehaviour
     [SerializeField] private GameObject _boulder;
     [SerializeField] private GameObject _chest;
 
+    [Header(“Scripts”)]
     [SerializeField] private deactivateShroom _flaskBehaviour;
+    [SerializeField] private BoulderBehaviour _boulderBehaviour;
+
+    [Header(“SpriteRenderer”)]
+    [SerializeField] private SpriteRenderer _chestRenderer;
+
+    [Header(“Sprites”)]
+    [SerializeField] private Sprite _nextChestSprite;
+
     #endregion
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -46,12 +56,11 @@ public class InteractionManager : MonoBehaviour
             }
             else if (other.gameObject == _key)
             {
-                // Handle interaction with water
-                // result = ...
+                _boulderBehaviour.StartRolling();
             }
             else if (other.gameObject == _boulder)
             {
-                // Handle interaction with boulder
+                // Handle interaction with water
                 // result = ...
             }
             else if (other.gameObject == _chest)
@@ -66,6 +75,7 @@ public class InteractionManager : MonoBehaviour
     public SpriteRenderer _sprite;
     public Sprite _nextSprite;
     [SerializeField] private deactivateShroom _deactivation;
+    [SerializeField] private BoulderBehaviour _boulderBehaviour;
 
     [Header("Booleans")]
     public bool shroomEaten;
@@ -90,6 +100,7 @@ public class InteractionManager : MonoBehaviour
         if (collision.gameObject.CompareTag("Shroom"))
         {
             _deactivation.Waiting();
+            shroomEaten = true;
         }
 
         if (collision.gameObject.CompareTag("Water"))

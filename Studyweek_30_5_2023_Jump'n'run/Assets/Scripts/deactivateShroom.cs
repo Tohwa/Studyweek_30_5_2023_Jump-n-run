@@ -15,7 +15,7 @@ public class deactivateShroom : MonoBehaviour
     [SerializeField] private GameObject _Wall;
     [SerializeField] private GameObject _notification;
 
-    private bool checkShroomEaten;
+    
     private bool checkKeyTaken;
     public static bool waitForResponse;
     [SerializeField] private bool clicked;
@@ -29,7 +29,6 @@ public class deactivateShroom : MonoBehaviour
 
     void Update()
     {
-        checkShroomEaten = _player.gameObject.GetComponent<InteractionManager>().shroomEaten;
         checkKeyTaken = _player.gameObject.GetComponent<InteractionManager>().keyTaken;       
 
         if(clicked && waitForResponse)
@@ -58,6 +57,7 @@ public class deactivateShroom : MonoBehaviour
         _notification.SetActive(true);
         Time.timeScale = 0f;
         waitForResponse = true;
+        
     }
 
     private void NoLongerWaiting()

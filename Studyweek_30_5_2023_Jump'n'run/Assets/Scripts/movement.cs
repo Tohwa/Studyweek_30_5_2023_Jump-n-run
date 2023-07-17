@@ -37,6 +37,7 @@ public class movement : MonoBehaviour
 
     private void Update()
     {
+        checkShroomEaten = gameObject.GetComponent<InteractionManager>().shroomEaten;
         if (isGrounded && !checkShroomEaten)
         {
             canDoubleJump = false;
