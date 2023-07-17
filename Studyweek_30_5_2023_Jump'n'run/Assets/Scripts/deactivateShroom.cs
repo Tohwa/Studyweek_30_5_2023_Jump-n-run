@@ -29,8 +29,8 @@ public class deactivateShroom : MonoBehaviour
 
     void Update()
     {
-        checkShroomEaten = _player.gameObject.GetComponent<Interaction>().shroomEaten;
-        checkKeyTaken = _player.gameObject.GetComponent<Interaction>().keyTaken;       
+        checkShroomEaten = _player.gameObject.GetComponent<InteractionManager>().shroomEaten;
+        checkKeyTaken = _player.gameObject.GetComponent<InteractionManager>().keyTaken;       
 
         if(clicked && waitForResponse)
         {

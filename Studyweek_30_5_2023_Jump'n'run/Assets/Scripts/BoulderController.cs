@@ -25,7 +25,7 @@ public class BoulderController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        canMove = _player.GetComponent<Interaction>().keyTaken;
+        canMove = _player.GetComponent<InteractionManager>().keyTaken;
         if (canMove)
         {
             MoveBoulder();

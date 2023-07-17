@@ -643,6 +643,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcbad6f5f53746f459794dfc0df62587, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &73479250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 73479246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e02f7cedd6307b45aaf58cb5f43a595, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sprite: {fileID: 931171907}
+  _nextSprite: {fileID: 21300000, guid: a781f5740e02da645a35e3c2db56d008, type: 3}
+  _deactivation: {fileID: 73479249}
+  shroomEaten: 0
+  keyTaken: 0
+  doorReached: 0
 --- !u!1 &84357361
 GameObject:
   m_ObjectHideFlags: 0
@@ -6165,7 +6183,7 @@ GameObject:
   - component: {fileID: 745833364}
   - component: {fileID: 745833366}
   m_Layer: 0
-  m_Name: Wall
+  m_Name: boulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6230,9 +6248,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 745833360}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 54.28, y: 47.68, z: 0}
-  m_LocalScale: {x: 0.65, y: 0.65, z: 1}
+  m_LocalScale: {x: 0.6499999, y: 0.6499999, z: 0.99999994}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -14976,7 +14994,7 @@ GameObject:
   - component: {fileID: 1863513086}
   - component: {fileID: 1863513089}
   m_Layer: 0
-  m_Name: Key
+  m_Name: kay
   m_TagString: Key
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20692,7 +20710,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3472690992131719009, guid: da9260d886fece443b6457c106b3a67e, type: 3}
       propertyPath: m_Name
-      value: Shroom
+      value: flask
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da9260d886fece443b6457c106b3a67e, type: 3}
@@ -20855,7 +20873,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: player
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1615138421492166562, guid: 56d41446e6b8ba849821a44e0d9dd124, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 56d41446e6b8ba849821a44e0d9dd124, type: 3}
 --- !u!1001 &5602358764326839603
 PrefabInstance:
