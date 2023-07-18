@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3472690992131719002}
   - component: {fileID: 3472690992131719005}
   m_Layer: 0
-  m_Name: Shroom
+  m_Name: Flask
   m_TagString: Shroom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
