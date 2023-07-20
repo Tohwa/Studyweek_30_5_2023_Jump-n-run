@@ -178,7 +178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 411083982112289284}
   m_Layer: 0
-  m_Name: Baum_Links
+  m_Name: Tree_Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
