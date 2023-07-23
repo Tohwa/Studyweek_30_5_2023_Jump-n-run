@@ -47,10 +47,10 @@ public class InputManager : MonoBehaviour
 
     public void OnPause(InputAction.CallbackContext ctx)
     {
-        if (ctx.started)
+        if (ctx.started && !_manager.gamePaused)
         {
             _manager.gamePaused = true;            
-        }
+        }        
     }
 
     public void OnResponse(InputAction.CallbackContext ctx)

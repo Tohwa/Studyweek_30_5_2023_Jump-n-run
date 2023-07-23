@@ -15,16 +15,13 @@ public class Pausemenu : MonoBehaviour
     #endregion
 
     private void Update()
-    {
-        if (!_manager.gamePaused)
-        {
-            ResumeGame();
-        }
-        else
+    {        
+        if(_manager.gamePaused)
         {
             PauseGame();
         }
     }
+
     public void PauseGame()
     {
         _pauseMenu.SetActive(true);
@@ -33,6 +30,7 @@ public class Pausemenu : MonoBehaviour
 
     public void ResumeGame()
     {
+        _manager.gamePaused = false;
         _pauseMenu.SetActive(false);
         Time.timeScale = 1f;
     }    
