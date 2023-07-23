@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     #region Fields
+    [Header("GameObjects")]
+    [SerializeField] private GameObject _pauseMenu;
     [Header("Components")]
     [SerializeField] private Rigidbody2D _playerRB;
 
@@ -13,6 +15,7 @@ public class GameManager : MonoBehaviour
     public bool climbing;
     public bool grounded;
     public bool jumping;
+    public bool canDoubleJump;
 
     public bool keyAcquired;
     public bool flaskAcquired;
@@ -21,15 +24,12 @@ public class GameManager : MonoBehaviour
 
     public bool gameOver;
     public bool victory;
+    public bool gamePaused;
     #endregion
 
     private void Awake()
     {
-        keyAcquired = false;
-        flaskAcquired = false;
-        goalReached = false;
-        gameOver = false;
-        climbing = false;
+        _pauseMenu.SetActive(false);
     }
 
     private void Update()

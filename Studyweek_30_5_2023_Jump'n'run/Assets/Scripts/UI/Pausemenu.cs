@@ -7,50 +7,39 @@ using UnityEngine.SceneManagement;
 public class Pausemenu : MonoBehaviour
 {
     #region Fields
+    [Header("GameObjects")]
     [SerializeField] private GameObject _pauseMenu;
-    public static bool isPaused;
-    private bool escPressed;
+
+    [Header("Scripts")]
+    [SerializeField] private GameManager _manager;
     #endregion
 
-    // Start is called before the first frame update
-    void Awake()
+    private void Update()
     {
-        _pauseMenu.SetActive(false);
+        if (!_manager.gamePaused)
+        {
+            ResumeGame();
+        }
+        else
+        {
+            PauseGame();
+        }
     }
-
     public void PauseGame()
     {
         _pauseMenu.SetActive(true);
         Time.timeScale = 0f;
-        isPaused = true;
     }
 
     public void ResumeGame()
     {
         _pauseMenu.SetActive(false);
         Time.timeScale = 1f;
-        isPaused = false;
-    }
-
-    public void OnPause(InputAction.CallbackContext ctx)
-    {
-        if(ctx.started)
-        {
-            if (isPaused)
-            {
-                ResumeGame();
-            }
-            else
-            {
-                PauseGame();
-            }
-        }
-    }
+    }    
 
     public void GoToMainMenu()
     {
         Time.timeScale = 1f;
-        isPaused = false;
         SceneManager.LoadScene("Main Menu");
     }
 
@@ -62,7 +51,6 @@ public class Pausemenu : MonoBehaviour
     public void RestartGame()
     {
         Time.timeScale = 1f;
-        isPaused = false;
         SceneManager.LoadScene("Game");
     }
 

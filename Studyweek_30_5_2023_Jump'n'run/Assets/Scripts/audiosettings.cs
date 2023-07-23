@@ -10,7 +10,7 @@ public class audiosettings : MonoBehaviour
     [SerializeField] private AudioSource _audioSource;
 
     [Header("Scripts")]
-    [SerializeField] private movement _controller;
+    [SerializeField] private InputManager _input;
     [SerializeField] private GameManager _manager;
 
     private float footStepDelay = 0.6f;
@@ -19,7 +19,7 @@ public class audiosettings : MonoBehaviour
 
     private void Update()
     {
-        if (_controller.moveInput.x != 0 && _manager.grounded)
+        if (_input.moveInput.x != 0 && _manager.grounded)
         {
             if(Time.time >= nextFootStepTime)
             {

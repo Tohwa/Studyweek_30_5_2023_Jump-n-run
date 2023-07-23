@@ -30,14 +30,4 @@ public class FlaskBehaviour : MonoBehaviour
             Time.timeScale = 0f;
         }
     }
-
-    public void OnResponse(InputAction.CallbackContext ctx)
-    {
-        if (ctx.performed && _manager.flaskAcquired)
-        {
-            _notification.SetActive(false);
-            Time.timeScale = 1f;
-            _manager.flaskAcquired = false;
-        }
-    }
 }

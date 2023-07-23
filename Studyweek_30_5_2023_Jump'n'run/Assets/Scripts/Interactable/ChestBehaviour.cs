@@ -28,12 +28,4 @@ public class ChestBehaviour : MonoBehaviour
             _renderer.sprite = _closedChest;
         }
     }
-
-    public void OnResponse(InputAction.CallbackContext ctx)
-    {
-        if (ctx.started && _manager.goalReached)
-        {
-            _manager.victory = true;
-        }
-    }
 }

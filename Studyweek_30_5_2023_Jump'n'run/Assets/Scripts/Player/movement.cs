@@ -10,17 +10,12 @@ public class movement : MonoBehaviour
     [Header("Float Values")]
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float jumpForce = 5f;
-    [SerializeField] private int JumpCount = 2;
+    public int JumpCount = 2;
     
-    private float coyoteTime = 0.2f;
-    private float CoyoteTimeCounter;
-    private float bufferTime = 0.2f;
-    private float bufferTimerCounter;
-    
-
-    [Header("Booleans")]
-    [SerializeField] private bool canDoubleJump;
-    private bool isJumping;
+    public float coyoteTime = 0.2f;
+    public float CoyoteTimeCounter;
+    public float bufferTime = 0.2f;
+    public float bufferTimerCounter;  
 
     [Header("Components")]
     [SerializeField] private Rigidbody2D _rb;
@@ -28,16 +23,12 @@ public class movement : MonoBehaviour
 
     [Header("Scripts")]
     [SerializeField] private GameManager _manager;
-
-    [Header("Movement Vector")]
-    public Vector2 moveInput;
+    [SerializeField] private InputManager _input;
     #endregion
 
     private void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
-        isJumping = false;
-        canDoubleJump = false;
     }
 
     private void Update()
@@ -45,17 +36,17 @@ public class movement : MonoBehaviour
 
         if (_manager.grounded && !_manager.flaskAcquired)
         {
-            canDoubleJump = false;
+            _manager.canDoubleJump = false;
             JumpCount = 1;
         }
         else if(_manager.grounded && _manager.flaskAcquired)
         {
-            canDoubleJump = true;
+            _manager.canDoubleJump = true;
             JumpCount = 2;
         }
 
 
-        if (isJumping && bufferTimerCounter > 0f)
+        if (_manager.jumping && bufferTimerCounter > 0f)
         {
             Jump();
             bufferTimerCounter = 0f;
@@ -73,37 +64,9 @@ public class movement : MonoBehaviour
         Move();
     }
 
-    public void OnMove(InputAction.CallbackContext context)
-    {
-        if(Time.timeScale != 0f)
-        {
-            moveInput = context.ReadValue<Vector2>();
-        }
-    }
-
-    public void OnJump(InputAction.CallbackContext context)
-    {
-        if (!Pausemenu.isPaused)
-        {
-            if (context.started && (_manager.grounded || (canDoubleJump && !isJumping)) && JumpCount > 0f)
-            {
-                Jump();
-            }
-            else if (context.canceled && isJumping)
-            {
-                isJumping = false;
-            }
-            
-            else if (context.performed && !_manager.grounded)
-            {
-                bufferTimerCounter = bufferTime;
-            }
-        }        
-    }
-
     private void Move()
     {
-        float moveX = moveInput.x * moveSpeed * Time.fixedDeltaTime;
+        float moveX = _input.moveInput.x * moveSpeed * Time.fixedDeltaTime;
 
         if (!_manager.climbing)
         {
@@ -112,18 +75,18 @@ public class movement : MonoBehaviour
         }
         else
         {
-            float moveY = moveInput.y * moveSpeed * Time.fixedDeltaTime;
+            float moveY = _input.moveInput.y * moveSpeed * Time.fixedDeltaTime;
             _rb.velocity = new Vector2(moveX, moveY);
             _animator.SetFloat("speed", Mathf.Abs(moveX));
         }
         
     }
 
-    private void Jump()
+    public void Jump()
     {
         _rb.velocity = new Vector2(_rb.velocity.x, jumpForce);
         CoyoteTimeCounter = coyoteTime;
-        isJumping = true;
+        _manager.jumping = true;
         JumpCount--;
     }    
 }
