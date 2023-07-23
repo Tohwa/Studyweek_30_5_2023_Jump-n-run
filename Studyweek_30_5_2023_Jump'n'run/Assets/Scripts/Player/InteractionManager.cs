@@ -26,6 +26,7 @@ public class InteractionManager : MonoBehaviour
         if (other.gameObject == _flask)
         {
             _manager.flaskAcquired = true;
+            _manager.canDoubleJump = true;
         }
         else if (other.gameObject == _key)
         {

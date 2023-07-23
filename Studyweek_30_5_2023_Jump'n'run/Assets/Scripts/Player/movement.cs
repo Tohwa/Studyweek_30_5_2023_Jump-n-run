@@ -34,14 +34,12 @@ public class movement : MonoBehaviour
     private void Update()
     {
 
-        if (_manager.grounded && !_manager.flaskAcquired)
+        if (_manager.grounded && !_manager.canDoubleJump)
         {
-            _manager.canDoubleJump = false;
             JumpCount = 1;
         }
-        else if(_manager.grounded && _manager.flaskAcquired)
+        else if(_manager.grounded && _manager.canDoubleJump)
         {
-            _manager.canDoubleJump = true;
             JumpCount = 2;
         }
 

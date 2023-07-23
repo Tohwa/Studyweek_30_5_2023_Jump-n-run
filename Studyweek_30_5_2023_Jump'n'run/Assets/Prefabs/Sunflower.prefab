@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 8683559256331625514}
   m_Layer: 0
   m_Name: Blatt_Rechts
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -701,7 +701,7 @@ GameObject:
   - component: {fileID: 2324974482480415171}
   m_Layer: 0
   m_Name: Blatt_Links
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1352,7 +1352,7 @@ GameObject:
   - component: {fileID: 6477848442369191130}
   m_Layer: 0
   m_Name: Blatt
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

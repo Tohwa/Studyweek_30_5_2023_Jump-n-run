@@ -10,7 +10,7 @@ public class FlaskBehaviour : MonoBehaviour
     #region Fields
     [Header("GameObjects")]
     [SerializeField] private GameObject _flask;
-    [SerializeField] private GameObject _notification;
+    [SerializeField] private GameObject _flaskNotification;
 
     [Header("Scripts")]
     [SerializeField] private GameManager _manager;
@@ -18,7 +18,7 @@ public class FlaskBehaviour : MonoBehaviour
 
     void Start()
     {
-        _notification.SetActive(false);
+        _flaskNotification.SetActive(false);
     }
 
     void Update()
@@ -26,7 +26,7 @@ public class FlaskBehaviour : MonoBehaviour
         if (_manager.flaskAcquired)
         {
             _flask.SetActive(false);
-            _notification.SetActive(true);
+            _flaskNotification.SetActive(true);
             Time.timeScale = 0f;
         }
     }

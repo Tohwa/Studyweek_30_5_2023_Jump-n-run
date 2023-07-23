@@ -8,7 +8,7 @@ public class KeyBehaviour : MonoBehaviour
     #region Fields
     [Header("GameObjects")]
     [SerializeField] private GameObject _key;
-    [SerializeField] private GameObject _notification;
+    [SerializeField] private GameObject _keyNotification;
 
     [Header("Scripts")]
     [SerializeField] private GameManager _manager;
@@ -16,7 +16,7 @@ public class KeyBehaviour : MonoBehaviour
 
     void Start()
     {
-        _notification.SetActive(false);
+        _keyNotification.SetActive(false);
     }
 
     void Update()
@@ -24,7 +24,7 @@ public class KeyBehaviour : MonoBehaviour
         if (_manager.keyAcquired)
         {
             _key.SetActive(false);
-            _notification.SetActive(true);
+            _keyNotification.SetActive(true);
             Time.timeScale = 0f;
         }
     }
