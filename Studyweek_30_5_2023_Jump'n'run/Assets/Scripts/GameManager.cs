@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
 
     public bool keyAcquired;
     public bool flaskAcquired;
+    public bool boulderCanRoll;
 
     public bool goalReached;
 
@@ -34,6 +35,11 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        if (keyAcquired)
+        {
+            boulderCanRoll = true;
+        }
+
         if(climbing)
         {
             _playerRB.gravityScale = 0;

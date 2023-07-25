@@ -7,7 +7,7 @@ public class ChestBehaviour : MonoBehaviour
 {
     #region Fields
     [Header("Components")]
-    [SerializeField] private SpriteRenderer _renderer;
+    [SerializeField] private SpriteRenderer _chestRenderer;
 
     [Header("Sprites")]
     [SerializeField] private Sprite _closedChest;
@@ -21,11 +21,11 @@ public class ChestBehaviour : MonoBehaviour
     {
         if (_manager.goalReached)
         {
-            _renderer.sprite = _openChest;
+            _chestRenderer.sprite = _openChest;
         }
         else
         {
-            _renderer.sprite = _closedChest;
+            _chestRenderer.sprite = _closedChest;
         }
     }
 }

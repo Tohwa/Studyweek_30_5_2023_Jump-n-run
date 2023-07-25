@@ -1173,6 +1173,7 @@ MonoBehaviour:
   canDoubleJump: 0
   keyAcquired: 0
   flaskAcquired: 0
+  boulderCanRoll: 0
   goalReached: 0
   gameOver: 0
   victory: 0
@@ -1292,7 +1293,7 @@ SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 3552974544557306843, guid: 90794b9f993fb9a4b964144eede8eebc, type: 3}
   m_PrefabInstance: {fileID: 3552974545519054226}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &246101992
+--- !u!114 &246101995
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1301,10 +1302,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 246101988}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 328898cc2e49e8d439d76a064ef19ab5, type: 3}
+  m_Script: {fileID: 11500000, guid: fcbad6f5f53746f459794dfc0df62587, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _renderer: {fileID: 246101991}
+  _flask: {fileID: 1042280778}
+  _key: {fileID: 1598861029}
+  _player: {fileID: 5336800783587037871}
+  _boulder: {fileID: 913447504}
+  _boulderRemover: {fileID: 1028361062}
+  _flaskNotification: {fileID: 1204935311}
+  _keyNotification: {fileID: 1204935311}
+  _chestRenderer: {fileID: 246101991}
+  _boulderRB: {fileID: 7321878926723016291}
   _closedChest: {fileID: 21300000, guid: 59b991984ef73ff448a6e505b1c6e124, type: 3}
   _openChest: {fileID: 21300000, guid: a781f5740e02da645a35e3c2db56d008, type: 3}
   _manager: {fileID: 224796092}
@@ -4042,6 +4051,11 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 20.48, y: 13}
   m_EdgeRadius: 0
+--- !u!1 &1028361062 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5526875527860669958, guid: 97f44b93c82a6b64e928542fe4bfdc2b, type: 3}
+  m_PrefabInstance: {fileID: 1365743625543142299}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1038345109 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5381174671668254045, guid: f35c6dc722e75854fbc71cc2377306d8, type: 3}
@@ -5427,8 +5441,8 @@ Transform:
   - {fileID: 1267464129}
   - {fileID: 352649357}
   - {fileID: 7430184577055803946}
-  - {fileID: 7321878926723016288}
   - {fileID: 5756338825952788492}
+  - {fileID: 7321878926723016288}
   - {fileID: 1365743625543142300}
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -5569,7 +5583,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3472690992131719004, guid: da9260d886fece443b6457c106b3a67e, type: 3}
   m_PrefabInstance: {fileID: 1419607684}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1419607689
+--- !u!114 &1419607693
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5582,7 +5596,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _flask: {fileID: 1042280778}
+  _key: {fileID: 1598861029}
+  _player: {fileID: 5336800783587037871}
+  _boulder: {fileID: 913447504}
+  _boulderRemover: {fileID: 1028361062}
   _flaskNotification: {fileID: 1204935311}
+  _keyNotification: {fileID: 1204935311}
+  _chestRenderer: {fileID: 246101991}
+  _boulderRB: {fileID: 7321878926723016291}
+  _closedChest: {fileID: 21300000, guid: 59b991984ef73ff448a6e505b1c6e124, type: 3}
+  _openChest: {fileID: 21300000, guid: a781f5740e02da645a35e3c2db56d008, type: 3}
   _manager: {fileID: 224796092}
 --- !u!1 &1421883488 stripped
 GameObject:
@@ -8864,7 +8887,7 @@ PrefabInstance:
     - target: {fileID: 8654387226849358205, guid: 18485c277ab2faa4fa669ad5392b590a, type: 3}
       propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 5756338825952788493}
+      objectReference: {fileID: 0}
     - target: {fileID: 8654387226849358205, guid: 18485c277ab2faa4fa669ad5392b590a, type: 3}
       propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -9201,7 +9224,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6911449708196617833, guid: 6d3c4bdb0b4ecfd45985b4a02f243281, type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6911449708196617833, guid: 6d3c4bdb0b4ecfd45985b4a02f243281, type: 3}
       propertyPath: m_LocalScale.x
@@ -9262,7 +9285,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6911449708196617833, guid: 6d3c4bdb0b4ecfd45985b4a02f243281, type: 3}
   m_PrefabInstance: {fileID: 5756338825952788491}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5756338825952788493
+--- !u!114 &5756338825952788496
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9271,11 +9294,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 1598861029}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe63702ab6169e346b020db18a24224a, type: 3}
+  m_Script: {fileID: 11500000, guid: fcbad6f5f53746f459794dfc0df62587, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _flask: {fileID: 1042280778}
   _key: {fileID: 1598861029}
+  _player: {fileID: 5336800783587037871}
+  _boulder: {fileID: 913447504}
+  _boulderRemover: {fileID: 1028361062}
+  _flaskNotification: {fileID: 1204935311}
   _keyNotification: {fileID: 1204935311}
+  _chestRenderer: {fileID: 246101991}
+  _boulderRB: {fileID: 7321878926723016291}
+  _closedChest: {fileID: 21300000, guid: 59b991984ef73ff448a6e505b1c6e124, type: 3}
+  _openChest: {fileID: 21300000, guid: a781f5740e02da645a35e3c2db56d008, type: 3}
   _manager: {fileID: 224796092}
 --- !u!1001 &5771837800644216478
 PrefabInstance:
@@ -9372,7 +9404,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4925339519044874511, guid: d471c5cda769c134ab87230c520b4c8d, type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 4925339519044874511, guid: d471c5cda769c134ab87230c520b4c8d, type: 3}
       propertyPath: m_LocalScale.x
@@ -9458,7 +9490,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &7321878926723016292
+--- !u!114 &7321878926723016295
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9467,12 +9499,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 913447504}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b04398918652f2499e1f551bfb3c39d, type: 3}
+  m_Script: {fileID: 11500000, guid: fcbad6f5f53746f459794dfc0df62587, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rb: {fileID: 7321878926723016291}
+  _flask: {fileID: 1042280778}
+  _key: {fileID: 1598861029}
   _player: {fileID: 5336800783587037871}
   _boulder: {fileID: 913447504}
+  _boulderRemover: {fileID: 1028361062}
+  _flaskNotification: {fileID: 1204935311}
+  _keyNotification: {fileID: 1204935311}
+  _chestRenderer: {fileID: 246101991}
+  _boulderRB: {fileID: 7321878926723016291}
+  _closedChest: {fileID: 21300000, guid: 59b991984ef73ff448a6e505b1c6e124, type: 3}
+  _openChest: {fileID: 21300000, guid: a781f5740e02da645a35e3c2db56d008, type: 3}
   _manager: {fileID: 224796092}
 --- !u!1001 &7430184577055803945
 PrefabInstance:
