@@ -13,7 +13,7 @@ public class BoulderBehaviour : MonoBehaviour
 
     [SerializeField] private GameManager _manager;
     #endregion
-    // Start is called before the first frame update
+    
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
@@ -22,17 +22,15 @@ public class BoulderBehaviour : MonoBehaviour
         _rbLock = _rb.constraints;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (_manager.keyAcquired)
+        if (_manager.boulderCanRoll)
         {
             StartRolling();
         }
         else
         {
-            FreezeBoulder();
-            
+            FreezeBoulder();           
         }
     }
 

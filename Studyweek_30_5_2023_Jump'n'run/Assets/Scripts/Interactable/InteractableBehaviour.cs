@@ -66,7 +66,7 @@ public class InteractableBehaviour : MonoBehaviour
             _chestRenderer.sprite = _closedChest;
         }
 
-        if (_manager.keyAcquired)
+        if (_manager.boulderCanRoll)
         {
             StartRolling();
         }

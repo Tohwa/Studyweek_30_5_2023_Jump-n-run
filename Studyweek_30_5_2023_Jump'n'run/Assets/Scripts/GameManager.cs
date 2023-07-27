@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public bool climbing;
     public bool grounded;
     public bool jumping;
+    public bool falling;
     public bool canDoubleJump;
 
     public bool keyAcquired;
@@ -35,11 +36,6 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (keyAcquired)
-        {
-            boulderCanRoll = true;
-        }
-
         if(climbing)
         {
             _playerRB.gravityScale = 0;

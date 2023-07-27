@@ -10,8 +10,6 @@ public class InteractionManager : MonoBehaviour
     #region Fields
 
     [Header("GameObjects")]
-    [SerializeField] private GameObject _groundNPC;
-    [SerializeField] private GameObject _airNPC;
     [SerializeField] private GameObject _flask;
     [SerializeField] private GameObject _key;
     [SerializeField] private GameObject _chest;
@@ -72,19 +70,14 @@ public class InteractionManager : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject == _groundNPC)
-        {
-            _manager.gameOver = true;
-        }
-        else if (other.gameObject == _airNPC)
-        {
-            _manager.gameOver = true;
-        }
-
         if (other.gameObject.CompareTag("Ground"))
         {
             _manager.grounded = true;
             _manager.jumping = false;
+        }
+        else if (other.gameObject.CompareTag("Enemy"))
+        {
+            _manager.gameOver = true;
         }
     }
 
