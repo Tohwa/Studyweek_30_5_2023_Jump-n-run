@@ -15,7 +15,8 @@ public class GameManager : MonoBehaviour
     public bool climbing;
     public bool grounded;
     public bool jumping;
-    public bool falling;
+    public bool ascending;
+    public bool descending;
     public bool canDoubleJump;
 
     public bool keyAcquired;

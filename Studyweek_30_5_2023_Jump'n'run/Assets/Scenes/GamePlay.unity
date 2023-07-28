@@ -1170,7 +1170,8 @@ MonoBehaviour:
   climbing: 0
   grounded: 0
   jumping: 0
-  falling: 0
+  ascending: 0
+  descending: 0
   canDoubleJump: 0
   keyAcquired: 0
   flaskAcquired: 0
@@ -8793,6 +8794,22 @@ PrefabInstance:
       propertyPath: _playableArea
       value: 
       objectReference: {fileID: 492856757}
+    - target: {fileID: 8654387225603950791, guid: 18485c277ab2faa4fa669ad5392b590a, type: 3}
+      propertyPath: _input
+      value: 
+      objectReference: {fileID: 1162877818}
+    - target: {fileID: 8654387225603950791, guid: 18485c277ab2faa4fa669ad5392b590a, type: 3}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 224796092}
+    - target: {fileID: 8654387225603950791, guid: 18485c277ab2faa4fa669ad5392b590a, type: 3}
+      propertyPath: _animator
+      value: 
+      objectReference: {fileID: 5336800782022781715}
+    - target: {fileID: 8654387225603950791, guid: 18485c277ab2faa4fa669ad5392b590a, type: 3}
+      propertyPath: _playerRenderer
+      value: 
+      objectReference: {fileID: 5336800783587037899}
     - target: {fileID: 8654387225603950814, guid: 18485c277ab2faa4fa669ad5392b590a, type: 3}
       propertyPath: _input
       value: 
@@ -9260,6 +9277,11 @@ MonoBehaviour:
   origYPos: 0
   lastYPos: 0
   _manager: {fileID: 224796092}
+--- !u!212 &5336800783587037899 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 8654387226849358177, guid: 18485c277ab2faa4fa669ad5392b590a, type: 3}
+  m_PrefabInstance: {fileID: 3605887265826661331}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5756338825952788491
 PrefabInstance:
   m_ObjectHideFlags: 0

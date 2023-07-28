@@ -16,7 +16,8 @@ public class FallDamageCheck : MonoBehaviour
 
     private void Update()
     {
-        _manager.falling = transform.position.y < lastYPos;
+        _manager.descending = transform.position.y < lastYPos;
+        _manager.ascending = transform.position.y > lastYPos;
 
         lastYPos = transform.position.y;
 
@@ -25,7 +26,7 @@ public class FallDamageCheck : MonoBehaviour
             origYPos = transform.position.y;
         }
 
-        if (_manager.falling && (origYPos - lastYPos) > fallDamageThreshold)
+        if (_manager.descending && (origYPos - lastYPos) > fallDamageThreshold)
         {
             _manager.gameOver = true;
         }
