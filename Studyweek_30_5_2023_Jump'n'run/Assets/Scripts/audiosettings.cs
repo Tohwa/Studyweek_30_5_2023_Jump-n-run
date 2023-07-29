@@ -6,9 +6,12 @@ using UnityEngine.InputSystem;
 public class audiosettings : MonoBehaviour
 {
     #region
+    [Header("Components")]
     [SerializeField] private AudioSource _audioSource;
-    [SerializeField] private GameObject _player;
-    [SerializeField] private PlayerInput _input;
+
+    [Header("Scripts")]
+    [SerializeField] private InputManager _input;
+    [SerializeField] private GameManager _manager;
 
     private float footStepDelay = 0.6f;
     private float nextFootStepTime = 0.6f;
@@ -16,7 +19,7 @@ public class audiosettings : MonoBehaviour
 
     private void Update()
     {
-        if (_player.GetComponent<movement>().moveInput.x != 0 && _player.GetComponent<movement>().isGrounded)
+        if (_input.moveInput.x != 0 && _manager.grounded)
         {
             if(Time.time >= nextFootStepTime)
             {

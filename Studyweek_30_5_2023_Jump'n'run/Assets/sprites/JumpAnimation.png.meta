@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a6814cc5da7b21e42bd0f4b3235c2a85
+guid: 66b3cc765db40704caf2b4e80eda0eb9
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 180
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -105,442 +105,337 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: IMG_3516_0
+      name: JumpAnimation_0
       rect:
         serializedVersion: 2
-        x: 2214
-        y: 3320
-        width: 811
-        height: 545
+        x: 1255
+        y: 382
+        width: 382
+        height: 1031
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c5da1152c99773f4db7f41f1935e37de
-      internalID: -2072162864
+      spriteID: 53f985858b4bdaa47884cdd6723cfd13
+      internalID: 425795437
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IMG_3516_1
+      name: JumpAnimation_1
       rect:
         serializedVersion: 2
-        x: 3025
-        y: 3858
-        width: 5
-        height: 5
+        x: 1715
+        y: 644
+        width: 382
+        height: 1032
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 60325f89080724e42b9772460d81c14e
-      internalID: -109411036
+      spriteID: b1abc7f6a88ed014988d4a46cbb264e2
+      internalID: -1606121020
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IMG_3516_2
+      name: JumpAnimation_2
       rect:
         serializedVersion: 2
-        x: 3031
-        y: 3753
-        width: 452
-        height: 112
+        x: 2157
+        y: 1278
+        width: 511
+        height: 662
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f37b07cafabaa0345a42777699a06bb0
-      internalID: 1664252716
+      spriteID: 4624c54b3b6956d49b09ee56bb1aa1d6
+      internalID: -2115204383
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IMG_3516_3
+      name: JumpAnimation_3
       rect:
         serializedVersion: 2
-        x: 3052
-        y: 3142
-        width: 1746
-        height: 723
+        x: 2656
+        y: 1115
+        width: 532
+        height: 717
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 22d49b1000f7f064ebf11820a787584e
-      internalID: -58784474
+      spriteID: a9ba3b673a0c2f2419e1f83759a02873
+      internalID: -2008612311
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IMG_3516_4
+      name: JumpAnimation_4
       rect:
         serializedVersion: 2
-        x: 373
-        y: 3808
-        width: 9
-        height: 12
+        x: 3177
+        y: 537
+        width: 591
+        height: 1166
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a04ee8d0f2e8fdc47a32b70016c91ba7
-      internalID: -1623297161
+      spriteID: 2fecd944fee9ba04980e08054f1593c5
+      internalID: 1311411900
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IMG_3516_5
+      name: JumpAnimation_5
       rect:
         serializedVersion: 2
-        x: 390
-        y: 3364
-        width: 1286
-        height: 456
+        x: 3730
+        y: 255
+        width: 638
+        height: 1135
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 07b6192e9c15d224b97d5953c44b7d92
-      internalID: -1670904982
+      spriteID: 74b3ba38c339d4641bae20c3a15432e2
+      internalID: -62938024
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IMG_3516_6
+      name: JumpAnimation_6
       rect:
         serializedVersion: 2
-        x: 1835
-        y: 3516
-        width: 6
-        height: 9
+        x: 6176
+        y: 291
+        width: 386
+        height: 993
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 62806bb54d4357642b8361ca54053054
-      internalID: 1172911621
+      spriteID: b04d2f7627f599a4aafcd9f77541ebb3
+      internalID: 1419074048
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IMG_3516_7
+      name: JumpAnimation_7
       rect:
         serializedVersion: 2
-        x: 1081
-        y: 3379
-        width: 11
+        x: 31
+        y: 274
+        width: 389
+        height: 994
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad166c681a11df9458f8527bebab8858
+      internalID: 1323996500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpAnimation_8
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 274
+        width: 457
+        height: 919
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db74f1228d6a50e4e81546dd2b8c7a01
+      internalID: 781180629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpAnimation_9
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 232
+        width: 512
+        height: 662
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b899d2f18177a744aae61f91c92345d
+      internalID: 469417326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpAnimation_10
+      rect:
+        serializedVersion: 2
+        x: 1223
+        y: 535
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45974080991b1404688713358fa7b611
+      internalID: 1756301131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpAnimation_11
+      rect:
+        serializedVersion: 2
+        x: 4392
+        y: 274
+        width: 587
+        height: 659
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 467188efa9f67f14991f4139b1667b3e
+      internalID: 1057089912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpAnimation_12
+      rect:
+        serializedVersion: 2
+        x: 5009
+        y: 271
+        width: 593
+        height: 630
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ed3db11103405a41bb1e69adfffa147
+      internalID: 1386595659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpAnimation_13
+      rect:
+        serializedVersion: 2
+        x: 5696
+        y: 287
+        width: 457
+        height: 919
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3da0a9aa019a97442b9657ba677c7e8a
+      internalID: 1931767747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpAnimation_14
+      rect:
+        serializedVersion: 2
+        x: 4746
+        y: 260
+        width: 7
         height: 7
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5b232913abf97c44089f50c0f1cf8749
-      internalID: 515729628
+      spriteID: c9a6fc3c049b30841a0f9933eb20177a
+      internalID: -1365009849
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IMG_3516_8
+      name: JumpAnimation_15
       rect:
         serializedVersion: 2
-        x: 591
-        y: 511
-        width: 817
-        height: 2008
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 260e07f5486a2f04d84f4aca1d59c7c8
-      internalID: 935159230
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: IMG_3516_9
-      rect:
-        serializedVersion: 2
-        x: 1910
-        y: 2271
-        width: 1193
-        height: 201
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 29f4026922c29ab4ba127889506413c0
-      internalID: -89455710
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: IMG_3516_10
-      rect:
-        serializedVersion: 2
-        x: 1998
-        y: 1470
-        width: 613
-        height: 140
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9f2989627444a6d4895ae579b5e01308
-      internalID: 826017697
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: IMG_3516_11
-      rect:
-        serializedVersion: 2
-        x: 2999
-        y: 1358
-        width: 303
-        height: 172
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 185c407cd3b5a4a41856a7b8b2f20109
-      internalID: 2702742
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: IMG_3516_12
-      rect:
-        serializedVersion: 2
-        x: 2972
-        y: 1441
-        width: 21
-        height: 10
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 98b5731857169de48aff2873bc13cbcb
-      internalID: -640867261
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: IMG_3516_13
-      rect:
-        serializedVersion: 2
-        x: 2565
-        y: 1381
-        width: 13
-        height: 41
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 88fb03d4653711a4e9919d50b948bdc6
-      internalID: 618163011
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: IMG_3516_14
-      rect:
-        serializedVersion: 2
-        x: 2949
-        y: 1383
+        x: 5363
+        y: 257
         width: 8
-        height: 5
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 844366fd0aed02048b6617598c94e2aa
-      internalID: 1006399576
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: IMG_3516_15
-      rect:
-        serializedVersion: 2
-        x: 2994
-        y: 1367
-        width: 4
-        height: 5
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7486d5a3a4e750043984756923dd76de
-      internalID: -1219345532
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: IMG_3516_16
-      rect:
-        serializedVersion: 2
-        x: 2615
-        y: 1352
-        width: 9
-        height: 6
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c6b9684bb8e381e42beb3ef9eebcfc1d
-      internalID: 630568971
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: IMG_3516_17
-      rect:
-        serializedVersion: 2
-        x: 2790
-        y: 1296
-        width: 52
         height: 9
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3a2161d3b8357484fba2af59832b03a9
-      internalID: 843810751
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: IMG_3516_18
-      rect:
-        serializedVersion: 2
-        x: 2145
-        y: 970
-        width: 11
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ead07232f2c925f4a9e5469d0b845985
-      internalID: -1165225341
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: IMG_3516_19
-      rect:
-        serializedVersion: 2
-        x: 2114
-        y: 849
-        width: 12
-        height: 28
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 17438779827e4804688407803b7c0a58
-      internalID: -1040025576
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: IMG_3516_20
-      rect:
-        serializedVersion: 2
-        x: 2082
-        y: 829
-        width: 5
-        height: 5
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ba06f50dc93d3ab4d882de3a62a319c4
-      internalID: -839569036
+      spriteID: eafa78ac37126b1408998e0507fdb44a
+      internalID: -711948259
       vertices: []
       indices: 
       edges: []
@@ -556,27 +451,22 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      IMG_3516_0: -2072162864
-      IMG_3516_1: -109411036
-      IMG_3516_10: 826017697
-      IMG_3516_11: 2702742
-      IMG_3516_12: -640867261
-      IMG_3516_13: 618163011
-      IMG_3516_14: 1006399576
-      IMG_3516_15: -1219345532
-      IMG_3516_16: 630568971
-      IMG_3516_17: 843810751
-      IMG_3516_18: -1165225341
-      IMG_3516_19: -1040025576
-      IMG_3516_2: 1664252716
-      IMG_3516_20: -839569036
-      IMG_3516_3: -58784474
-      IMG_3516_4: -1623297161
-      IMG_3516_5: -1670904982
-      IMG_3516_6: 1172911621
-      IMG_3516_7: 515729628
-      IMG_3516_8: 935159230
-      IMG_3516_9: -89455710
+      JumpAnimation_0: 425795437
+      JumpAnimation_1: -1606121020
+      JumpAnimation_10: 1756301131
+      JumpAnimation_11: 1057089912
+      JumpAnimation_12: 1386595659
+      JumpAnimation_13: 1931767747
+      JumpAnimation_14: -1365009849
+      JumpAnimation_15: -711948259
+      JumpAnimation_2: -2115204383
+      JumpAnimation_3: -2008612311
+      JumpAnimation_4: 1311411900
+      JumpAnimation_5: -62938024
+      JumpAnimation_6: 1419074048
+      JumpAnimation_7: 1323996500
+      JumpAnimation_8: 781180629
+      JumpAnimation_9: 469417326
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

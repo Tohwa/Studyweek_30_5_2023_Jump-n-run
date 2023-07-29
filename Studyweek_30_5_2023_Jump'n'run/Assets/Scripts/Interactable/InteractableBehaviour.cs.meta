@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: fcbad6f5f53746f459794dfc0df62587
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - _flask: {instanceID: 0}
+  - _key: {instanceID: 0}
+  - _player: {instanceID: 0}
+  - _boulder: {instanceID: 0}
+  - _boulderRemover: {instanceID: 0}
+  - _flaskNotification: {instanceID: 0}
+  - _keyNotification: {instanceID: 0}
+  - _chestRenderer: {instanceID: 0}
+  - _boulderRB: {instanceID: 0}
+  - _closedChest: {fileID: 21300000, guid: 59b991984ef73ff448a6e505b1c6e124, type: 3}
+  - _openChest: {fileID: 21300000, guid: a781f5740e02da645a35e3c2db56d008, type: 3}
+  - _manager: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
