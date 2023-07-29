@@ -15,10 +15,13 @@ public class GameManager : MonoBehaviour
     public bool climbing;
     public bool grounded;
     public bool jumping;
+    public bool ascending;
+    public bool descending;
     public bool canDoubleJump;
 
     public bool keyAcquired;
     public bool flaskAcquired;
+    public bool boulderCanRoll;
 
     public bool goalReached;
 

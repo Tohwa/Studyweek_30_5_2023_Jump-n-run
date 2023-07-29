@@ -10,8 +10,6 @@ public class InteractionManager : MonoBehaviour
     #region Fields
 
     [Header("GameObjects")]
-    [SerializeField] private GameObject _groundNPC;
-    [SerializeField] private GameObject _airNPC;
     [SerializeField] private GameObject _flask;
     [SerializeField] private GameObject _key;
     [SerializeField] private GameObject _chest;
@@ -19,6 +17,7 @@ public class InteractionManager : MonoBehaviour
 
     [Header("Scripts")]
     [SerializeField] private GameManager _manager;
+    [SerializeField] private SpriteBehaviour _spriteBehave;
     #endregion
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -45,6 +44,13 @@ public class InteractionManager : MonoBehaviour
         {
             _manager.grounded = true;
             _manager.jumping = false;
+
+            _spriteBehave.lastYPos = transform.position.y;
+
+            if (_manager.descending && (_spriteBehave.origYPos - _spriteBehave.lastYPos) > _spriteBehave.fallDamageThreshold)
+            {
+                _manager.gameOver = true;
+            }
         }
         else if (other.gameObject.CompareTag("Water"))
         {
@@ -67,24 +73,22 @@ public class InteractionManager : MonoBehaviour
         {
             _manager.grounded = false;
             _manager.jumping = true;
+            _spriteBehave.origYPos = transform.position.y;
         }
     }
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject == _groundNPC)
-        {
-            _manager.gameOver = true;
-        }
-        else if (other.gameObject == _airNPC)
-        {
-            _manager.gameOver = true;
-        }
-
         if (other.gameObject.CompareTag("Ground"))
         {
             _manager.grounded = true;
             _manager.jumping = false;
+
+            _spriteBehave.lastYPos = transform.position.y;
+        }
+        else if (other.gameObject.CompareTag("Enemy"))
+        {
+            _manager.gameOver = true;
         }
     }
 
@@ -94,6 +98,8 @@ public class InteractionManager : MonoBehaviour
         {
             _manager.grounded = false;
             _manager.jumping = true;
+
+            _spriteBehave.origYPos = transform.position.y;
         }
     }
 }

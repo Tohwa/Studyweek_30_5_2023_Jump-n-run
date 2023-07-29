@@ -7,7 +7,7 @@ public class MenuController : MonoBehaviour
 {
     public void PlayGame()
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("GamePlay");
     }
 
     public void QuitGame()
@@ -17,7 +17,7 @@ public class MenuController : MonoBehaviour
 
     public void ReturnToMenu()
     {
-        SceneManager.LoadScene("Main Menu");
+        SceneManager.LoadScene("MainMenu");
 
     }
 }

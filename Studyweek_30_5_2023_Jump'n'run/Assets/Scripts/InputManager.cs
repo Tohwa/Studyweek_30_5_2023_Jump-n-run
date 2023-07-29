@@ -63,7 +63,8 @@ public class InputManager : MonoBehaviour
         {
             _notification.SetActive(false);
             Time.timeScale = 1f;
-            _manager.flaskAcquired = false;
+            _manager.keyAcquired = false;
+            _manager.boulderCanRoll = true;
         }
         else if (ctx.performed && _manager.flaskAcquired)
         {
