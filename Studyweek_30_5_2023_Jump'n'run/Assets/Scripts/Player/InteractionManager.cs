@@ -17,6 +17,7 @@ public class InteractionManager : MonoBehaviour
 
     [Header("Scripts")]
     [SerializeField] private GameManager _manager;
+    [SerializeField] private SpriteBehaviour _spriteBehave;
     #endregion
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -43,6 +44,13 @@ public class InteractionManager : MonoBehaviour
         {
             _manager.grounded = true;
             _manager.jumping = false;
+
+            _spriteBehave.lastYPos = transform.position.y;
+
+            if (_manager.descending && (_spriteBehave.origYPos - _spriteBehave.lastYPos) > _spriteBehave.fallDamageThreshold)
+            {
+                _manager.gameOver = true;
+            }
         }
         else if (other.gameObject.CompareTag("Water"))
         {
@@ -65,6 +73,7 @@ public class InteractionManager : MonoBehaviour
         {
             _manager.grounded = false;
             _manager.jumping = true;
+            _spriteBehave.origYPos = transform.position.y;
         }
     }
 
@@ -74,6 +83,8 @@ public class InteractionManager : MonoBehaviour
         {
             _manager.grounded = true;
             _manager.jumping = false;
+
+            _spriteBehave.lastYPos = transform.position.y;
         }
         else if (other.gameObject.CompareTag("Enemy"))
         {
@@ -87,6 +98,8 @@ public class InteractionManager : MonoBehaviour
         {
             _manager.grounded = false;
             _manager.jumping = true;
+
+            _spriteBehave.origYPos = transform.position.y;
         }
     }
 }

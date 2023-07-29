@@ -8781,7 +8781,7 @@ PrefabInstance:
     - target: {fileID: 2621289096244188805, guid: 18485c277ab2faa4fa669ad5392b590a, type: 3}
       propertyPath: _fallDMG
       value: 
-      objectReference: {fileID: 5336800783587037892}
+      objectReference: {fileID: 0}
     - target: {fileID: 2621289096244188805, guid: 18485c277ab2faa4fa669ad5392b590a, type: 3}
       propertyPath: _manager
       value: 
@@ -8790,6 +8790,10 @@ PrefabInstance:
       propertyPath: _groundNPC
       value: 
       objectReference: {fileID: 1518532062891709360, guid: 39c628ca76442b74380ac95ab1aa30c6, type: 3}
+    - target: {fileID: 2621289096244188805, guid: 18485c277ab2faa4fa669ad5392b590a, type: 3}
+      propertyPath: _spriteBehave
+      value: 
+      objectReference: {fileID: 5336800783587037900}
     - target: {fileID: 8654387225173280852, guid: 18485c277ab2faa4fa669ad5392b590a, type: 3}
       propertyPath: _playableArea
       value: 
@@ -8807,9 +8811,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5336800782022781715}
     - target: {fileID: 8654387225603950791, guid: 18485c277ab2faa4fa669ad5392b590a, type: 3}
+      propertyPath: _playerRB
+      value: 
+      objectReference: {fileID: 5336800783587037875}
+    - target: {fileID: 8654387225603950791, guid: 18485c277ab2faa4fa669ad5392b590a, type: 3}
       propertyPath: _playerRenderer
       value: 
       objectReference: {fileID: 5336800783587037899}
+    - target: {fileID: 8654387225603950791, guid: 18485c277ab2faa4fa669ad5392b590a, type: 3}
+      propertyPath: fallDamageThreshold
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 8654387225603950814, guid: 18485c277ab2faa4fa669ad5392b590a, type: 3}
       propertyPath: _input
       value: 
@@ -9261,27 +9273,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebf20a7ce14b51c4d9cc1d4912a88e7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5336800783587037892
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5336800783587037871}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4ce5b9b77a48824fb6aae4911891c96, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fallDamageThreshold: 20
-  origYPos: 0
-  lastYPos: 0
-  _manager: {fileID: 224796092}
 --- !u!212 &5336800783587037899 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 8654387226849358177, guid: 18485c277ab2faa4fa669ad5392b590a, type: 3}
   m_PrefabInstance: {fileID: 3605887265826661331}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5336800783587037900 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8654387225603950791, guid: 18485c277ab2faa4fa669ad5392b590a, type: 3}
+  m_PrefabInstance: {fileID: 3605887265826661331}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5336800783587037871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ebe72c27e516014f9cad40913262b22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5756338825952788491
 PrefabInstance:
   m_ObjectHideFlags: 0

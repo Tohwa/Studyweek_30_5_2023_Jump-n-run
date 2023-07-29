@@ -6,8 +6,14 @@ public class SpriteBehaviour : MonoBehaviour
 {
     #region Fields
     [Header("Components")]
+    [SerializeField] private Rigidbody2D _playerRB;
     [SerializeField] private SpriteRenderer _playerRenderer;
     [SerializeField] private Animator _animator;
+
+    [Header("Floats")]
+    public float fallDamageThreshold = 10f;
+    public float origYPos;
+    public float lastYPos;
 
     [Header("Scripts")]
     [SerializeField] private GameManager _manager;
@@ -16,6 +22,9 @@ public class SpriteBehaviour : MonoBehaviour
 
     private void Update()
     {
+        _manager.descending = _playerRB.velocity.y < 0;
+        _manager.ascending = _playerRB.velocity.y > 0;
+
         if (_input.moveInput.x < 0)
         {
             _playerRenderer.flipX = true;
