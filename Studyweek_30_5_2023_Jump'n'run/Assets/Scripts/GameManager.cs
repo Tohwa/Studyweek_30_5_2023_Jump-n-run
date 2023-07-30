@@ -6,8 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     #region Fields
-    [Header("GameObjects")]
-    [SerializeField] private GameObject _pauseMenu;
+
     [Header("Components")]
     [SerializeField] private Rigidbody2D _playerRB;
 
@@ -29,11 +28,6 @@ public class GameManager : MonoBehaviour
     public bool victory;
     public bool gamePaused;
     #endregion
-
-    private void Awake()
-    {
-        _pauseMenu.SetActive(false);
-    }
 
     private void Update()
     {

@@ -2,19 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
-public class Pausemenu : MonoBehaviour
+public class UiManager : MonoBehaviour
 {
     #region Fields
     [Header("GameObjects")]
     [SerializeField] private GameObject _pauseMenu;
     [SerializeField] private GameObject _settingsMenu;
 
+    [Header("Components")]
+    [SerializeField] private AudioMixer _mixer;
+
     [Header("Scripts")]
     [SerializeField] private GameManager _manager;
     #endregion
+
+    private void Awake()
+    {
+        _pauseMenu.SetActive(false);
+        _settingsMenu.SetActive(false);
+    }
 
     private void Update()
     {        
@@ -46,6 +56,7 @@ public class Pausemenu : MonoBehaviour
     public void GoToOptionsMenu()
     {
         _pauseMenu.SetActive(false);
+
         _settingsMenu.SetActive(true);
     }
 
@@ -58,5 +69,26 @@ public class Pausemenu : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void SetVolumeMaster(float _volume)
+    {
+        _mixer.SetFloat("MasterVol", _volume);
+    }
+
+    public void SetVolumeBGM(float _volume)
+    {
+        _mixer.SetFloat("BGMVol", _volume);
+    }
+
+    public void SetVolumeSFX(float _volume)
+    {
+        _mixer.SetFloat("SFXVol", _volume);
+    }
+
+    public void ReturnToPauseMenu()
+    {
+        _pauseMenu.SetActive(true);
+        _settingsMenu.SetActive(false);
     }
 }
