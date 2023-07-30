@@ -7,16 +7,12 @@ public class SettingsMenu : MonoBehaviour
 {
     #region Fields
     [Header("GameObjects")]
+    [SerializeField] private GameObject _pauseMenu;
     [SerializeField] private GameObject _settingsMenu;
 
     [Header("Components")]
     [SerializeField] private AudioMixer _mixer;
     #endregion
-
-    private void Awake()
-    {
-        _settingsMenu.SetActive(false);
-    }
 
     public void SetVolumeMaster(float _volume)
     {
@@ -31,5 +27,11 @@ public class SettingsMenu : MonoBehaviour
     public void SetVolumeSFX(float _volume)
     {
         _mixer.SetFloat("SFXVol", _volume);
+    }
+
+    public void OnBack()
+    {
+        _pauseMenu.SetActive(true);
+        _settingsMenu.SetActive(false);
     }
 }
