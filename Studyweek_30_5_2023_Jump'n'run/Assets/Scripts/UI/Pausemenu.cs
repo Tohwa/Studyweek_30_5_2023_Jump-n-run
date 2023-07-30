@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -9,6 +10,7 @@ public class Pausemenu : MonoBehaviour
     #region Fields
     [Header("GameObjects")]
     [SerializeField] private GameObject _pauseMenu;
+    [SerializeField] private GameObject _settingsMenu;
 
     [Header("Scripts")]
     [SerializeField] private GameManager _manager;
@@ -43,7 +45,8 @@ public class Pausemenu : MonoBehaviour
 
     public void GoToOptionsMenu()
     {
-
+        _pauseMenu.SetActive(false);
+        _settingsMenu.SetActive(true);
     }
 
     public void RestartGame()

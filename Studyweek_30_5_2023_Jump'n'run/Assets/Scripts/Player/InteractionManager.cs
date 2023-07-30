@@ -47,7 +47,7 @@ public class InteractionManager : MonoBehaviour
 
             _spriteBehave.lastYPos = transform.position.y;
 
-            if (_manager.descending && (_spriteBehave.origYPos - _spriteBehave.lastYPos) > _spriteBehave.fallDamageThreshold)
+            if ((_manager.descending && (_spriteBehave.origYPos - _spriteBehave.lastYPos) > _spriteBehave.fallDamageThreshold) && !_manager.climbing)
             {
                 _manager.gameOver = true;
             }
