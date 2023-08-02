@@ -66,27 +66,34 @@ public class UiManager : MonoBehaviour
         Time.timeScale = 1f;
     }    
 
-    public void GoToMainMenu()
+    public void MainMenu()
     {
         Time.timeScale = 1f;
+        _manager.gamePaused = false;
         SceneManager.LoadScene("MainMenu");
     }
 
-    public void GoToOptionsMenu()
+    public void SettingsMenu()
     {
         _pauseMenu.SetActive(false);
 
         _settingsMenu.SetActive(true);
     }
 
-    public void RestartGame()
+    public void PlayGame()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("Game");
+        _manager.gamePaused = false;
+        SceneManager.LoadScene("GamePlay");
+        
     }
 
     public void QuitGame()
     {
+        #if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+        #endif
+
         Application.Quit();
     }
 
