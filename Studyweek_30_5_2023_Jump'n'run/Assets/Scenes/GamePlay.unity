@@ -6077,6 +6077,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1880825998}
   - component: {fileID: 1880825999}
+  - component: {fileID: 1880826000}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -6121,6 +6122,21 @@ MonoBehaviour:
   _sfxText: {fileID: 1364264167}
   _mixer: {fileID: 24100000, guid: 8fc4fef33584aaa4bbfdab493d57f986, type: 2}
   _manager: {fileID: 224796092}
+--- !u!114 &1880826000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1880825997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: deef43337fa0fc34ea34c949b50c061d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _masterSlider: {fileID: 225380751}
+  _sfxSlider: {fileID: 661033839}
+  _bgmSlider: {fileID: 1772371920}
 --- !u!1 &1911949745 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7284438562119694659, guid: f35c6dc722e75854fbc71cc2377306d8, type: 3}
@@ -6855,7 +6871,7 @@ PrefabInstance:
       objectReference: {fileID: 1880825999}
     - target: {fileID: 1016545343607418517, guid: b8a0f0fba6959304a935cd0e691e19c8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: GoToOptionsMenu
+      value: SettingsMenu
       objectReference: {fileID: 0}
     - target: {fileID: 1543622895988334974, guid: b8a0f0fba6959304a935cd0e691e19c8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -6867,7 +6883,7 @@ PrefabInstance:
       objectReference: {fileID: 1880825999}
     - target: {fileID: 1678048765442183075, guid: b8a0f0fba6959304a935cd0e691e19c8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: GoToMainMenu
+      value: MainMenu
       objectReference: {fileID: 0}
     - target: {fileID: 6359713780201322289, guid: b8a0f0fba6959304a935cd0e691e19c8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -6883,7 +6899,7 @@ PrefabInstance:
       objectReference: {fileID: 1880825999}
     - target: {fileID: 7876922230327653920, guid: b8a0f0fba6959304a935cd0e691e19c8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: RestartGame
+      value: PlayGame
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b8a0f0fba6959304a935cd0e691e19c8, type: 3}
@@ -8322,17 +8338,101 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7461313100029884956, guid: d54de4615f1b0244f9878add554d8dd8, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7461313100029884956, guid: d54de4615f1b0244f9878add554d8dd8, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7461313100029884956, guid: d54de4615f1b0244f9878add554d8dd8, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1880825999}
+    - target: {fileID: 7461313100029884956, guid: d54de4615f1b0244f9878add554d8dd8, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1880826000}
+    - target: {fileID: 7461313100029884956, guid: d54de4615f1b0244f9878add554d8dd8, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7461313100029884956, guid: d54de4615f1b0244f9878add554d8dd8, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: OnBGMValueCHange
+      objectReference: {fileID: 0}
+    - target: {fileID: 7461313100029884956, guid: d54de4615f1b0244f9878add554d8dd8, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SliderValueInGame, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7461313100029884956, guid: d54de4615f1b0244f9878add554d8dd8, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7461313101216700067, guid: d54de4615f1b0244f9878add554d8dd8, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7461313101216700067, guid: d54de4615f1b0244f9878add554d8dd8, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7461313101216700067, guid: d54de4615f1b0244f9878add554d8dd8, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1880825999}
+    - target: {fileID: 7461313101216700067, guid: d54de4615f1b0244f9878add554d8dd8, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1880826000}
+    - target: {fileID: 7461313101216700067, guid: d54de4615f1b0244f9878add554d8dd8, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7461313101216700067, guid: d54de4615f1b0244f9878add554d8dd8, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: OnSFXValueChange
+      objectReference: {fileID: 0}
+    - target: {fileID: 7461313101216700067, guid: d54de4615f1b0244f9878add554d8dd8, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SliderValueInGame, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7461313101216700067, guid: d54de4615f1b0244f9878add554d8dd8, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7461313101585239107, guid: d54de4615f1b0244f9878add554d8dd8, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7461313101585239107, guid: d54de4615f1b0244f9878add554d8dd8, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7461313101585239107, guid: d54de4615f1b0244f9878add554d8dd8, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1880825999}
+    - target: {fileID: 7461313101585239107, guid: d54de4615f1b0244f9878add554d8dd8, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1880826000}
+    - target: {fileID: 7461313101585239107, guid: d54de4615f1b0244f9878add554d8dd8, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7461313101585239107, guid: d54de4615f1b0244f9878add554d8dd8, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: OnMasterValueChanged
+      objectReference: {fileID: 0}
+    - target: {fileID: 7461313101585239107, guid: d54de4615f1b0244f9878add554d8dd8, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SliderValueInGame, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7461313101585239107, guid: d54de4615f1b0244f9878add554d8dd8, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7461313101665088360, guid: d54de4615f1b0244f9878add554d8dd8, type: 3}
       propertyPath: m_Name
       value: SettingsMenu
