@@ -10,6 +10,7 @@ public class MainMenuManager : MonoBehaviour
 {
     #region Fields
     [Header("GameObjects")]
+    [SerializeField] private GameObject _mainMenu;
     [SerializeField] private GameObject _settingsMenu;
     [SerializeField] private Slider _masterSlider;
     [SerializeField] private Slider _bgmSlider;
@@ -44,12 +45,16 @@ public class MainMenuManager : MonoBehaviour
 
     public void SettingsMenu()
     {
+        _mainMenu.SetActive(false);
+
         _settingsMenu.SetActive(true);
     }
 
     public void SettingsToMainMenu()
     {
         _settingsMenu.SetActive(false);
+
+        _mainMenu.SetActive(true);
     }
 
     public void QuitGame()
