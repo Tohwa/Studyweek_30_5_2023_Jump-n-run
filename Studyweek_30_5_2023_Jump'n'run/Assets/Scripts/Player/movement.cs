@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using static UnityEditor.Experimental.GraphView.GraphView;
 
-public class movement : MonoBehaviour
+public class Movement : MonoBehaviour
 {
     #region Fields
     [Header("Float Values")]
@@ -19,7 +19,6 @@ public class movement : MonoBehaviour
 
     [Header("Components")]
     [SerializeField] private Rigidbody2D _rb;
-    public Animator _animator;
 
     [Header("Scripts")]
     [SerializeField] private GameManager _manager;
@@ -69,13 +68,11 @@ public class movement : MonoBehaviour
         if (!_manager.climbing)
         {
             _rb.velocity = new Vector2(moveX, _rb.velocity.y);
-            _animator.SetFloat("speed", Mathf.Abs(moveX));
         }
         else
         {
             float moveY = _input.moveInput.y * moveSpeed * Time.fixedDeltaTime;
             _rb.velocity = new Vector2(moveX, moveY);
-            _animator.SetFloat("speed", Mathf.Abs(moveX));
         }
         
     }

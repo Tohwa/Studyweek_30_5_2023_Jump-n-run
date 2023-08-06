@@ -25,6 +25,12 @@ public class SpriteBehaviour : MonoBehaviour
         _manager.descending = _playerRB.velocity.y < 0;
         _manager.ascending = _playerRB.velocity.y > 0;
 
+        if(_input.moveInput.x != 0 && !_manager.climbing)
+        {
+            _animator.SetFloat("speed", Mathf.Abs(_input.moveInput.x));
+            _animator.SetBool("climbing", false);
+        }
+
         if (_input.moveInput.x < 0)
         {
             _playerRenderer.flipX = true;
@@ -34,7 +40,12 @@ public class SpriteBehaviour : MonoBehaviour
             _playerRenderer.flipX = false;
         }
 
-        if (_manager.ascending && !_manager.grounded)
+        if (_manager.climbing)
+        {
+            _animator.SetBool("climbing", true);
+        }
+
+        if (_manager.ascending && !_manager.grounded && !_manager.climbing)
         {
             _animator.SetBool("ascending", true);
         }
@@ -43,7 +54,7 @@ public class SpriteBehaviour : MonoBehaviour
             _animator.SetBool("ascending", false);
         }
 
-        if (_manager.descending && !_manager.grounded)
+        if (_manager.descending && !_manager.grounded && !_manager.climbing)
         {
             _animator.SetBool("descending", true);
         }

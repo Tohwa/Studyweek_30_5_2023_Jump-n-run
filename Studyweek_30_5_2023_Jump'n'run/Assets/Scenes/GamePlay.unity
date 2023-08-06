@@ -8263,6 +8263,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Ground
       objectReference: {fileID: 0}
+    - target: {fileID: 7141365734222609429, guid: a4417e6ded197c446b5fadf249a7af7e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7141365734222609431, guid: a4417e6ded197c446b5fadf249a7af7e, type: 3}
       propertyPath: m_TagString
       value: Ladder

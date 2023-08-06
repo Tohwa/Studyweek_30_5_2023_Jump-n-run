@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class audiosettings : MonoBehaviour
+public class AudioSettings : MonoBehaviour
 {
     #region
     [Header("Components")]
