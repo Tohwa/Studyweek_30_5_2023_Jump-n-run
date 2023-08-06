@@ -22,7 +22,7 @@ public class BoulderBehaviour : MonoBehaviour
         _rbLock = _rb.constraints;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (_manager.boulderCanRoll)
         {
