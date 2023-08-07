@@ -34,7 +34,7 @@ public class SpriteBehaviour : MonoBehaviour
             _playerRenderer.flipX = false;
         }
 
-        if (_manager.ascending && !_manager.grounded)
+        if (_manager.ascending && !_manager.grounded && !_manager.climbing)
         {
             _animator.SetBool("ascending", true);
         }
@@ -43,7 +43,7 @@ public class SpriteBehaviour : MonoBehaviour
             _animator.SetBool("ascending", false);
         }
 
-        if (_manager.descending && !_manager.grounded)
+        if (_manager.descending && !_manager.grounded && !_manager.climbing)
         {
             _animator.SetBool("descending", true);
         }
