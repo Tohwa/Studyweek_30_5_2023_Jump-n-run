@@ -6957,7 +6957,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7882128595487643209, guid: b8a0f0fba6959304a935cd0e691e19c8, type: 3}
       propertyPath: m_fontSize
-      value: 250
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 7882128595487643209, guid: b8a0f0fba6959304a935cd0e691e19c8, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7882128595487643209, guid: b8a0f0fba6959304a935cd0e691e19c8, type: 3}
+      propertyPath: m_fontSizeMax
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 7882128595487643209, guid: b8a0f0fba6959304a935cd0e691e19c8, type: 3}
       propertyPath: m_fontSizeBase
@@ -6965,7 +6973,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7882128595487643209, guid: b8a0f0fba6959304a935cd0e691e19c8, type: 3}
       propertyPath: m_enableAutoSizing
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7882128595487643209, guid: b8a0f0fba6959304a935cd0e691e19c8, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 7882128595487643209, guid: b8a0f0fba6959304a935cd0e691e19c8, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8470680810787458048, guid: b8a0f0fba6959304a935cd0e691e19c8, type: 3}
       propertyPath: m_fontSize
@@ -8554,6 +8570,18 @@ PrefabInstance:
     - target: {fileID: 4725079698170034075, guid: d54de4615f1b0244f9878add554d8dd8, type: 3}
       propertyPath: m_AnchorMin.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6470041044823639689, guid: d54de4615f1b0244f9878add554d8dd8, type: 3}
+      propertyPath: m_fontSize
+      value: 123.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6470041044823639689, guid: d54de4615f1b0244f9878add554d8dd8, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6470041044823639689, guid: d54de4615f1b0244f9878add554d8dd8, type: 3}
+      propertyPath: m_fontSizeMax
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 6509530449378246125, guid: d54de4615f1b0244f9878add554d8dd8, type: 3}
       propertyPath: m_fontSize

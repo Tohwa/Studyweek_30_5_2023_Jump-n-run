@@ -436,15 +436,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4735152062903516571, guid: 33fc370670c3c024087ca68457da4482, type: 3}
       propertyPath: m_fontSize
-      value: 72
+      value: 185.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 4735152062903516571, guid: 33fc370670c3c024087ca68457da4482, type: 3}
+      propertyPath: m_fontSizeMax
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 4735152062903516571, guid: 33fc370670c3c024087ca68457da4482, type: 3}
       propertyPath: m_enableAutoSizing
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4934364587201980898, guid: 33fc370670c3c024087ca68457da4482, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 648.284
+      objectReference: {fileID: 0}
+    - target: {fileID: 4934364587201980898, guid: 33fc370670c3c024087ca68457da4482, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 108.422
+      objectReference: {fileID: 0}
+    - target: {fileID: 4934364587201980898, guid: 33fc370670c3c024087ca68457da4482, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 323.683
+      objectReference: {fileID: 0}
+    - target: {fileID: 4934364587201980898, guid: 33fc370670c3c024087ca68457da4482, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.23291016
+      value: -54.211
       objectReference: {fileID: 0}
     - target: {fileID: 5077662933608047366, guid: 33fc370670c3c024087ca68457da4482, type: 3}
       propertyPath: m_Pivot.x
@@ -1064,6 +1080,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 63.65
       objectReference: {fileID: 0}
+    - target: {fileID: 6470041044823639689, guid: d54de4615f1b0244f9878add554d8dd8, type: 3}
+      propertyPath: m_fontSize
+      value: 140.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6470041044823639689, guid: d54de4615f1b0244f9878add554d8dd8, type: 3}
+      propertyPath: m_fontSizeMax
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 6509530449378246125, guid: d54de4615f1b0244f9878add554d8dd8, type: 3}
       propertyPath: m_fontSize
       value: 69.8
@@ -1630,7 +1654,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: 9169e2c432f45434c9f2dde3d9326593, type: 2}
+  m_Material: {fileID: 2100000, guid: c868ee8e4ff69c948a52c4b9c2368503, type: 2}
   m_Color: {r: 0.2289387, g: 0.3962264, b: 0.18129228, a: 0.392}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
