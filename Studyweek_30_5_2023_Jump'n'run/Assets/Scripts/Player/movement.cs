@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using static UnityEditor.Experimental.GraphView.GraphView;
 
-public class movement : MonoBehaviour
+public class Movement : MonoBehaviour
 {
     #region Fields
     [Header("Float Values")]
@@ -19,7 +19,6 @@ public class movement : MonoBehaviour
 
     [Header("Components")]
     [SerializeField] private Rigidbody2D _rb;
-    public Animator _animator;
 
     [Header("Scripts")]
     [SerializeField] private GameManager _manager;
