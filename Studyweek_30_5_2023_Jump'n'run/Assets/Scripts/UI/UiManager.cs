@@ -47,7 +47,10 @@ public class UiManager : MonoBehaviour
         _sfxSlider.onValueChanged.AddListener(SFXTextValue);
 
         _fullscreenToggle.isOn = Screen.fullScreen;
+        _fullscreenToggle.onValueChanged.AddListener(OnFullscreenToggleChange);
+
         _windowedToggle.isOn = !Screen.fullScreen;
+        _windowedToggle.onValueChanged.AddListener(OnWindowToggleChange);
     }
 
     private void Update()
@@ -58,18 +61,20 @@ public class UiManager : MonoBehaviour
         }
     }
 
-    public void ToggleFullscreen(bool _value)
+    public void OnFullscreenToggleChange(bool _value)
     {
         if (_value)
         {
+            _fullscreenToggle.isOn = !_value;
             Screen.fullScreen = true;
         }
     }
 
-    public void ToggleWindowed(bool _value)
+    public void OnWindowToggleChange(bool _value)
     {
         if (_value)
         {
+            _windowedToggle.isOn = !_value;
             Screen.fullScreen = false;
         }
     }
