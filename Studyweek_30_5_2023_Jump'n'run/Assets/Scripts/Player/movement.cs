@@ -19,6 +19,7 @@ public class Movement : MonoBehaviour
 
     [Header("Components")]
     [SerializeField] private Rigidbody2D _rb;
+    [SerializeField] private Animator _animator;
 
     [Header("Scripts")]
     [SerializeField] private GameManager _manager;
@@ -68,13 +69,18 @@ public class Movement : MonoBehaviour
         if (!_manager.climbing)
         {
             _rb.velocity = new Vector2(moveX, _rb.velocity.y);
+            _animator.SetFloat("speed", Mathf.Abs(moveX));
+            _animator.SetBool("climb", false);
         }
         else
         {
             float moveY = _input.moveInput.y * moveSpeed * Time.fixedDeltaTime;
             _rb.velocity = new Vector2(moveX, moveY);
+            _animator.SetFloat("speed", Mathf.Abs(moveX));
+            _animator.SetBool("climb", true);
+
         }
-        
+
     }
 
     public void Jump()
