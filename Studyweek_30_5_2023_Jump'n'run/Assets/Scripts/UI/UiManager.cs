@@ -21,6 +21,8 @@ public class UiManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _masterText;
     [SerializeField] private TextMeshProUGUI _bgmText;
     [SerializeField] private TextMeshProUGUI _sfxText;
+    [SerializeField] private Toggle _windowedToggle;
+    [SerializeField] private Toggle _fullscreenToggle;
 
     [Header("Components")]
     [SerializeField] private AudioMixer _mixer;
@@ -43,6 +45,9 @@ public class UiManager : MonoBehaviour
         _bgmSlider.onValueChanged.AddListener(BGMTextValue);
         SFXTextValue(_sfxSlider.value);
         _sfxSlider.onValueChanged.AddListener(SFXTextValue);
+
+        _fullscreenToggle.isOn = Screen.fullScreen;
+        _windowedToggle.isOn = !Screen.fullScreen;
     }
 
     private void Update()
@@ -50,6 +55,22 @@ public class UiManager : MonoBehaviour
         if(_manager.gamePaused)
         {
             PauseGame();
+        }
+    }
+
+    public void ToggleFullscreen(bool _value)
+    {
+        if (_value)
+        {
+            Screen.fullScreen = true;
+        }
+    }
+
+    public void ToggleWindowed(bool _value)
+    {
+        if (_value)
+        {
+            Screen.fullScreen = false;
         }
     }
 
