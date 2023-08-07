@@ -19,6 +19,7 @@ public class Movement : MonoBehaviour
 
     [Header("Components")]
     [SerializeField] private Rigidbody2D _rb;
+    [SerializeField] private Animator _animator;
 
     [Header("Scripts")]
     [SerializeField] private GameManager _manager;
