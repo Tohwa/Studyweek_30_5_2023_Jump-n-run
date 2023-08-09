@@ -29,6 +29,7 @@ public class UiManager : MonoBehaviour
 
     [Header("Scripts")]
     [SerializeField] private GameManager _manager;
+    [SerializeField] private ResolutionManager _resManager;
     #endregion
 
     private void Awake()

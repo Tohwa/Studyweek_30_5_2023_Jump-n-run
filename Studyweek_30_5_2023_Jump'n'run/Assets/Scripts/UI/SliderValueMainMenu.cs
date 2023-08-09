@@ -23,23 +23,23 @@ public class SliderValueMainMenu : MonoBehaviour
 
     private void Start()
     {
-        _masterSlider.value = SliderValueManager.masterSliderValue;
-        _sfxSlider.value = SliderValueManager.SFXSliderValue;
-        _bgmSlider.value = SliderValueManager.BGMSliderValue;
+        _masterSlider.value = GameManager.masterSliderValue;
+        _sfxSlider.value = GameManager.SFXSliderValue;
+        _bgmSlider.value = GameManager.BGMSliderValue;
     }
 
     public void OnMasterValueChanged()
     {
-        SliderValueManager.masterSliderValue = _masterSlider.value;   
+        GameManager.masterSliderValue = _masterSlider.value;   
     }
 
     public void OnSFXValueChange()
     {
-        SliderValueManager.SFXSliderValue = _sfxSlider.value;
+        GameManager.SFXSliderValue = _sfxSlider.value;
     }
 
     public void OnBGMValueCHange()
     {
-        SliderValueManager.BGMSliderValue = _bgmSlider.value;
+        GameManager.BGMSliderValue = _bgmSlider.value;
     }
 }
