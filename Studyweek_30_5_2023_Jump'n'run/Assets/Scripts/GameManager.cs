@@ -10,6 +10,14 @@ public class GameManager : MonoBehaviour
     [Header("Components")]
     [SerializeField] private Rigidbody2D _playerRB;
 
+    [Header("public static values")]
+    public static float masterSliderValue = 0.75f;
+    public static float SFXSliderValue = 0.75f;
+    public static float BGMSliderValue = 0.75f;
+
+    public static int resolutionWidth;
+    public static int resolutionHeight;
+
     [Header("boolean")]
     public bool climbing;
     public bool grounded;

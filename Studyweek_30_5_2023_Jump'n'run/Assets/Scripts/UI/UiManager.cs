@@ -21,12 +21,15 @@ public class UiManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _masterText;
     [SerializeField] private TextMeshProUGUI _bgmText;
     [SerializeField] private TextMeshProUGUI _sfxText;
+    [SerializeField] private Toggle _windowedToggle;
+    [SerializeField] private Toggle _fullscreenToggle;
 
     [Header("Components")]
     [SerializeField] private AudioMixer _mixer;
 
     [Header("Scripts")]
     [SerializeField] private GameManager _manager;
+    [SerializeField] private ResolutionManager _resManager;
     #endregion
 
     private void Awake()
@@ -43,6 +46,11 @@ public class UiManager : MonoBehaviour
         _bgmSlider.onValueChanged.AddListener(BGMTextValue);
         SFXTextValue(_sfxSlider.value);
         _sfxSlider.onValueChanged.AddListener(SFXTextValue);
+
+        _fullscreenToggle.isOn = Screen.fullScreen;
+        _windowedToggle.isOn = !Screen.fullScreen;
+        _windowedToggle.onValueChanged.AddListener(OnWindowToggleChange);
+        _fullscreenToggle.onValueChanged.AddListener(OnFullscreenToggleChange);
     }
 
     private void Update()
@@ -50,6 +58,24 @@ public class UiManager : MonoBehaviour
         if(_manager.gamePaused)
         {
             PauseGame();
+        }
+    }
+
+    public void OnFullscreenToggleChange(bool _value)
+    {
+        if (_value)
+        {
+            _windowedToggle.isOn = !_value;
+            Screen.fullScreen = true;
+        }
+    }
+
+    public void OnWindowToggleChange(bool _value)
+    {
+        if (_value)
+        {
+            _fullscreenToggle.isOn = !_value;
+            Screen.fullScreen = false;
         }
     }
 
