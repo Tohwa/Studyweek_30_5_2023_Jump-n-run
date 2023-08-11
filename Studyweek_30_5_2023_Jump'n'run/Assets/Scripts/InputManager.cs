@@ -7,7 +7,9 @@ public class InputManager : MonoBehaviour
 {
     #region Fields
     [Header("GameObjects")]
-    [SerializeField] private GameObject _notification;
+    [SerializeField] private GameObject _flaskNotification;
+    [SerializeField] private GameObject _keyNotification;
+
 
     [Header("Script")]
     [SerializeField] private GameManager _manager;
@@ -59,16 +61,16 @@ public class InputManager : MonoBehaviour
         {
             _manager.victory = true;
         }
-        else if (ctx.performed && _manager.keyAcquired)
+        else if (ctx.started && _manager.keyAcquired)
         {
-            _notification.SetActive(false);
+            _keyNotification.SetActive(false);
             Time.timeScale = 1f;
             _manager.keyAcquired = false;
             _manager.boulderCanRoll = true;
         }
-        else if (ctx.performed && _manager.flaskAcquired)
+        else if (ctx.started && _manager.flaskAcquired)
         {
-            _notification.SetActive(false);
+            _flaskNotification.SetActive(false);
             Time.timeScale = 1f;
             _manager.flaskAcquired = false;
         }
