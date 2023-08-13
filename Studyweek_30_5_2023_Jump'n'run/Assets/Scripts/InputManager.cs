@@ -13,7 +13,7 @@ public class InputManager : MonoBehaviour
 
     [Header("Script")]
     [SerializeField] private GameManager _manager;
-    [SerializeField] private movement _controller;
+    [SerializeField] private Movement _controller;
 
     [Header("Vector")]
     public Vector2 moveInput;
