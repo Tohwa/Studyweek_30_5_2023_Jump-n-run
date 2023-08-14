@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Movement : MonoBehaviour
+public class movement : MonoBehaviour
 {
     #region Fields
     [Header("Float Values")]
