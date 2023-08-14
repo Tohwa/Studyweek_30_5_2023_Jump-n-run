@@ -75,9 +75,6 @@ public class Movement : MonoBehaviour
         {
             float moveY = _input.moveInput.y * moveSpeed * Time.fixedDeltaTime;
             _rb.velocity = new Vector2(moveX, moveY);
-            _animator.SetFloat("speed", Mathf.Abs(moveX));
-            _animator.SetBool("climb", true);
-
         }
 
     }

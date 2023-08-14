@@ -18,6 +18,7 @@ public class InteractionManager : MonoBehaviour
     [Header("Scripts")]
     [SerializeField] private GameManager _manager;
     [SerializeField] private SpriteBehaviour _spriteBehave;
+    [SerializeField] private Animator _animator;
     #endregion
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -38,6 +39,7 @@ public class InteractionManager : MonoBehaviour
         else if (other.gameObject == _ladder)
         {
             _manager.climbing = true;
+            _animator.SetBool("climb", true);
         }
 
         if (other.gameObject.CompareTag("Ground"))
